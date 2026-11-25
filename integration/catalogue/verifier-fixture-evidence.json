@@ -1,0 +1,35 @@
+{
+  "provider": "loopback-fixture",
+  "mode": "runtime-verification",
+  "source": "code-club",
+  "version": "20f5919c4efa5550a937898471dda7d17edecf92",
+  "verifiedAt": "2026-11-21T10:30:33.247Z",
+  "runtimeIds": {
+    "python": 71,
+    "javascript": 63,
+    "java": 62,
+    "cpp": 54,
+    "c": 50,
+    "typescript": 74
+  },
+  "passed": true,
+  "reports": [
+    {
+      "slug": "contains-duplicate",
+      "sourceDigest": "4a41f71adbe724fec69deee5d55e0297baeacedb5733c758feafe0544bd772fe",
+      "contentDigest": "444bd8e9500b2092297839a443ac92e80c707fe51b4f369dc85a620230f4d9a8",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "73d3f6e84009233bfd9222deeff7cd18aab7341e412b442a3e9e3b3f5732b83f",
+          "wrongDigest": "5dc3853a37ee099178c8ff3100bb9bae1488a0854f44e392253ff8bef273d713"
+        }
+      ]
+    }
+  ]
+}

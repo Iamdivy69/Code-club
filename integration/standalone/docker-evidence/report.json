@@ -1,0 +1,15 @@
+{
+  "origin": "http://127.0.0.1:34121",
+  "verdict": "PASS",
+  "scenarios": [
+    "Docker health and disabled Google/account mail options",
+    "Existing learner sign-in and catalogue topic/language filters",
+    "Daily quiz skip persists after reload",
+    "Edition sequential gates, three upcoming chapters, desktop/mobile fit and both themes",
+    "Admin announcement, maintenance controls and recovery",
+    "Teacher, placement officer and recruiter fixture sign-ins",
+    "Sign-in remains available when CacheStorage rejects access",
+    "Signed-out published discovery and real Docker offline reading"
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,14 @@
+{
+  "kind": "CodeClub community browser verification",
+  "date": "2026-11-21T16:45:28.778Z",
+  "scope": "Production React UI and Fastify routes against disposable practice_test users; original fixtures only. No demo data mutation.",
+  "browser": "151.0.7922.34",
+  "checks": [
+    "Learner submits a structured new-problem proposal with private grading cases through the browser.",
+    "Administrator reviews the private proposal and approves it without changing the released problem catalogue.",
+    "Learner report reaches the private queue; administrator removal withdraws the public feature and records its audit receipt.",
+    "Administrator creates a fellowship and learner filters its published public listing by category and remote status.",
+    "Community opportunity filters and cards fit the mobile viewport."
+  ],
+  "verdict": "PASS"
+}

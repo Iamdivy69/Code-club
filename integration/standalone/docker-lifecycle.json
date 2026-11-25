@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "restoredBackup": ".local/backups/before-standalone-20261121.dump",
+  "original": {
+    "problems": 17,
+    "users": 1,
+    "submissions": 0,
+    "progress": 0,
+    "certificates": 0
+  },
+  "restored": {
+    "problems": 17,
+    "users": 1,
+    "submissions": 0,
+    "progress": 0,
+    "certificates": 0
+  },
+  "problemIdentitiesPreserved": true,
+  "learnerIdentityAndPasswordPreservedBeforeDisposableAuthFixture": true,
+  "originalEnvPasswordMatches": false,
+  "upgradedAuth": "temporary password on disposable copy after preserved-hash assertion; original demo untouched",
+  "upgradeMigrations": 50,
+  "freshMigrations": 50,
+  "freshHealthAndSignIn": true,
+  "liveSyntheticRun": {
+    "passed": 2
+  },
+  "liveSyntheticSubmit": {
+    "verdict": "Accepted",
+    "passed": 4,
+    "total": 4
+  },
+  "publishedProblems": 17,
+  "approvedCatalogueImported": false
+}

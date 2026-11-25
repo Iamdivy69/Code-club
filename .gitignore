@@ -1,0 +1,37 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Local environment and controlled runtime/content data
+.env
+.env.*
+!.env.example
+!.env.*.example
+.local/
+
+# Credentials and database backups
+*.pem
+*.key
+*.p12
+*.pfx
+*.dump
+*.backup
+*.sql.gz
+*.sqlite
+*.sqlite3
+
+# Logs and generated test output
+*.log
+*.pid
+playwright-report/
+test-results/
+integration/**/failure.png
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

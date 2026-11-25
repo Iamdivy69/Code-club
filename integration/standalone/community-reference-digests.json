@@ -1,0 +1,37 @@
+{
+  "revision": "20f5919c4efa5550a937898471dda7d17edecf92",
+  "files": [
+    {
+      "path": "backend/schemas/contributionSchema.js",
+      "sha256": "b0975761a41818ccdd8517b0bb95c29c03ce143046aac0b8089b98177636dc55"
+    },
+    {
+      "path": "backend/routes/contributions.js",
+      "sha256": "da29f25e707ef432fb6412e00d14eb3af8a0db49147972303490bb962247ea11"
+    },
+    {
+      "path": "backend/controllers/contributionController.js",
+      "sha256": "69e0ac63740cd6e4e51fb9887c9414330b5d5eb65e92e8045cd7ca4cf5487fff"
+    },
+    {
+      "path": "backend/controllers/adminContributionController.js",
+      "sha256": "e7c64100d49be4b7e7479dba4d0e03e689e16cc63645c1ce5c50c24efd2a979c"
+    },
+    {
+      "path": "backend/services/contribution.js",
+      "sha256": "e1d51fe8e6daf5d87f78898290fb8d58ad26b5732ea482334b8c7b4227d586f0"
+    },
+    {
+      "path": "backend/schemas/opportunitySchema.js",
+      "sha256": "c5b9f6358c4ef084bd7b62605ff40a4384e70a07e62e1a682fd4550cbfc0b2b4"
+    },
+    {
+      "path": "backend/controllers/opportunityController.js",
+      "sha256": "ce7103d5ee530f702587acfd1e87575337c8ee360f14c9cc969693aa6b9769db"
+    },
+    {
+      "path": "backend/controllers/adminOpportunityController.js",
+      "sha256": "7fed7e48722d258e5de149513cded54d548be78942ad82a34c2eb706a5a0a286"
+    }
+  ]
+}

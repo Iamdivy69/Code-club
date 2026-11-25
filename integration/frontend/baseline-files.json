@@ -1,0 +1,15 @@
+{
+  "frontend/package.json": "9df1f8d54fe2700f8657ca82edd469712079d8d430653be464d284f5bf9f43f9",
+  "frontend/src/api/client.ts": "2a4c6e0dc7dd8e1716b8b65b9f7ab1dc67abbde3da7de2f92dfb2faa97254f89",
+  "frontend/src/app/App.tsx": "c17affed69986aaa08d87a405189d35563161024848279570311002377eab29e",
+  "frontend/src/components/Menu.tsx": "aabc097a8b0e00dd0646d0b71c5144b6e457dd025135c0f30c001c63f9094697",
+  "frontend/src/contexts/ThemeContext.tsx": "0a012c1da3a4e59c42dc0e7e715d23260ebf906115889330ba6a82647930a28c",
+  "frontend/src/features/auth/AuthContext.tsx": "c705572e0f7c92c9b2855ade27ca8e12ca6e058954059bfe8789abc3b25d50d2",
+  "frontend/src/features/auth/Signup.tsx": "130f449400b70a83032c18accf7cd5d76a0530f324283f88617a0f3d04e53a7d",
+  "frontend/src/styles/index.css": "55bed911d85390daf58d8a6a5ab6fda40324a363754bc5c993ca1407bb61abc6",
+  "frontend/src/types/auth.ts": "fea1c91f5eb9280d27acb8ff7837988a7bbfd3838d1b393b739e9b1d543d382c",
+  "frontend/tsconfig.app.json": "d1c82f989b099a025d995a9045c233f113efd62a1ed262c836cfa99a52d029a1",
+  "frontend/vite.config.ts": "0adb5a3b70bb7b60a01abab97a76f1955b82d2889de80fb87b34c9e52c518b93",
+  "package-lock.json": "b09f567b1d1c3db97b8cbbab449a3e7e2bbf572d2c1efab53187684d1ba377cb",
+  "package.json": "789060df3eafbda2f65b4e7bdec61a963cbef8c096176004b013ca88ce60d4ce"
+}

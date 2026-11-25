@@ -1,0 +1,147 @@
+name: dsa-practice
+
+x-backend-build: &backend-build
+  context: .
+  target: api
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports: ['127.0.0.1:${PRACTICE_POSTGRES_PORT:-15432}:5432']
+    environment:
+      POSTGRES_USER: practice
+      POSTGRES_PASSWORD: local_practice
+      POSTGRES_DB: practice
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U practice -d practice']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - practice_postgres:/var/lib/postgresql/data
+  redis:
+    image: redis:7-alpine
+    ports: ['127.0.0.1:${PRACTICE_REDIS_PORT:-16379}:6379']
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  migrate:
+    build: *backend-build
+    environment:
+      DATABASE_URL: &database-url postgresql://practice:local_practice@postgres:5432/practice?schema=public
+      NODE_ENV: development
+      PRACTICE_COMPOSE_SEED: '1'
+      PRACTICE_SEED_PASSWORD: ${PRACTICE_SEED_PASSWORD:-}
+      PRACTICE_STAFF_PASSWORD: ${PRACTICE_STAFF_PASSWORD:-}
+    command:
+      - sh
+      - -ec
+      - |
+        npm run db:migrate
+        if [ -n "$$PRACTICE_SEED_PASSWORD" ]; then npm run db:seed; fi
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build: *backend-build
+    init: true
+    ports: ['127.0.0.1:${PRACTICE_API_PORT:-5010}:5010']
+    environment:
+      NODE_ENV: development
+      PRACTICE_API_HOST: 0.0.0.0
+      DATABASE_URL: *database-url
+      JWT_SECRET: ${JWT_SECRET:-}
+      PRACTICE_BILLING_ENABLED: ${PRACTICE_BILLING_ENABLED:-false}
+      PRACTICE_PROFILE_SIGN_SECRET: ${PRACTICE_PROFILE_SIGN_SECRET:-}
+      REDIS_URL: redis://redis:6379
+      JUDGE0_QUEUE_MODE: redis
+      JUDGE0_API_URL: ${JUDGE0_API_URL:-}
+      JUDGE0_API_KEY: ${JUDGE0_API_KEY:-}
+      JUDGE0_RAPIDAPI_KEY: ${JUDGE0_RAPIDAPI_KEY:-}
+      PRACTICE_OPPORTUNITY_AI_URL: ${PRACTICE_OPPORTUNITY_AI_URL:-}
+      PRACTICE_OPPORTUNITY_AI_MODEL: ${PRACTICE_OPPORTUNITY_AI_MODEL:-}
+      PRACTICE_OPPORTUNITY_AI_KEY: ${PRACTICE_OPPORTUNITY_AI_KEY:-}
+      PRACTICE_COACHING_AI_URL: ${PRACTICE_COACHING_AI_URL:-}
+      PRACTICE_COACHING_AI_MODEL: ${PRACTICE_COACHING_AI_MODEL:-}
+      PRACTICE_COACHING_AI_KEY: ${PRACTICE_COACHING_AI_KEY:-}
+      PRACTICE_WEEKLY_REVIEW_ENABLED: ${PRACTICE_WEEKLY_REVIEW_ENABLED:-false}
+      PRACTICE_ACCOUNT_EMAIL_ENABLED: ${PRACTICE_ACCOUNT_EMAIL_ENABLED:-false}
+      PRACTICE_GOOGLE_CLIENT_ID: ${PRACTICE_GOOGLE_CLIENT_ID:-}
+      PRACTICE_GOOGLE_CLIENT_SECRET: ${PRACTICE_GOOGLE_CLIENT_SECRET:-}
+      PRACTICE_LEETCODE_STATS_URL: ${PRACTICE_LEETCODE_STATS_URL:-}
+      PRACTICE_LEETCODE_STATS_TOKEN: ${PRACTICE_LEETCODE_STATS_TOKEN:-}
+      PRACTICE_PUBLIC_SIGNUP_ENABLED: ${PRACTICE_PUBLIC_SIGNUP_ENABLED:-false}
+      EMAIL_ENABLED: ${EMAIL_ENABLED:-false}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
+      FRONTEND_URL: ${FRONTEND_URL:-}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://127.0.0.1:5010/api/practice/health').then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+
+  reminders:
+    build: *backend-build
+    init: true
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: *database-url
+      PRACTICE_ENABLED: 'true'
+    command: ['node', 'dist/placement-reminders.js', '--watch']
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  weekly-review:
+    profiles: ['weekly-review']
+    build: *backend-build
+    init: true
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: *database-url
+      PRACTICE_ENABLED: 'true'
+      PRACTICE_WEEKLY_REVIEW_ENABLED: ${PRACTICE_WEEKLY_REVIEW_ENABLED:-false}
+      PRACTICE_COACHING_AI_URL: ${PRACTICE_COACHING_AI_URL:-}
+      PRACTICE_COACHING_AI_MODEL: ${PRACTICE_COACHING_AI_MODEL:-}
+      PRACTICE_COACHING_AI_KEY: ${PRACTICE_COACHING_AI_KEY:-}
+      EMAIL_ENABLED: ${EMAIL_ENABLED:-false}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
+      FRONTEND_URL: ${FRONTEND_URL:-}
+    command: ['node', 'dist/weekly-review.js', '--send', '--watch']
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  web:
+    build:
+      context: .
+      target: web
+    ports: ['127.0.0.1:${PRACTICE_WEB_PORT:-3010}:3010']
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '-q', '--spider', 'http://127.0.0.1:3010/']
+      interval: 5s
+      timeout: 4s
+      retries: 12
+
+volumes:
+  practice_postgres:

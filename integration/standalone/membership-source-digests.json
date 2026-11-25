@@ -1,0 +1,41 @@
+{
+  "revision": "20f5919c4efa5550a937898471dda7d17edecf92",
+  "files": [
+    {
+      "sha256": "1265e124600ce73654e7699a98481f970dc238528cdd3654871230159240dab9",
+      "path": "backend/config/featureFlags.js"
+    },
+    {
+      "sha256": "8b5f2232ab136e3e74ed2b615765b45dd7cbbc4fdb2b209567decd8fc611f18a",
+      "path": "backend/config/ambassadorMilestones.js"
+    },
+    {
+      "sha256": "ac7a9552bd54ff0ff10077b3e2db1f74da4381e787ea36eb6ae5868ab0ce70b2",
+      "path": "backend/middleware/premiumGate.js"
+    },
+    {
+      "sha256": "95e668f47f0ca3fcc2c29851fa2cced05e477c4f53bbe39664bfd34c57679e5c",
+      "path": "backend/routes/editorial.js"
+    },
+    {
+      "sha256": "9d8ded98a3a921c312e3e6fae05c9e75de72e495d3b023e04410b0916f3208a2",
+      "path": "backend/routes/hints.js"
+    },
+    {
+      "sha256": "44295bca8cf87dd9468fa3c478418d78176694dc78ca5ee73130a4a7406edea0",
+      "path": "backend/routes/interview.js"
+    },
+    {
+      "sha256": "ea74fb745e88b64152ea6d92d8d15325d58a6448ab2416f7e85a803814002ca4",
+      "path": "backend/routes/profilePdf.js"
+    },
+    {
+      "sha256": "a0c680f2aa88ef248593adf5ea5f61df13fa93d98ed76d3b3820c32210dd813b",
+      "path": "backend/routes/billing.js"
+    },
+    {
+      "sha256": "fb9775100dd27a53cdd522e61506b355589d520110475802ac7a76c68f85c7aa",
+      "path": "backend/routes/recruiter.js"
+    }
+  ]
+}

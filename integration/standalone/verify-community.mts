@@ -1,0 +1,151 @@
+import assert from 'node:assert/strict';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { randomUUID } from 'node:crypto';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { join, resolve } from 'node:path';
+import bcrypt from 'bcrypt';
+import { createServer as createViteServer } from 'vite';
+import { createDatabase } from '../../backend/src/database.js';
+import { createApp } from '../../backend/src/app.js';
+
+const connection = new URL(process.env.PRACTICE_TEST_DATABASE_URL ?? '');
+assert.ok(['localhost', '127.0.0.1', '[::1]'].includes(connection.hostname) && connection.pathname === '/practice_test');
+const runtime = process.env.PLAYWRIGHT_MODULE;
+assert.ok(runtime, 'Set PLAYWRIGHT_MODULE to playwright/index.mjs.');
+const { chromium } = await import(pathToFileURL(resolve(runtime)).href);
+const root = fileURLToPath(new URL('../../', import.meta.url));
+const output = join(root, 'integration/standalone/community-evidence');
+await mkdir(output, { recursive: true });
+const db = createDatabase(connection.href);
+const password = 'community-browser-fixture-' + randomUUID();
+const passwordHash = await bcrypt.hash(password, 10);
+const suffix = randomUUID().slice(0, 8);
+const people = [] as Array<{ id: string; email: string }>;
+for (const role of ['STUDENT', 'SUPER_ADMIN'] as const) people.push(await db.user.create({ data: { name: 'Community browser ' + role, email: 'community-browser-' + suffix + '-' + role.toLowerCase() + '@practice.test',
+  passwordHash, role, emailVerified: true, approvalStatus: 'APPROVED' }, select: { id: true, email: true } }));
+const api = createApp(db, { NODE_ENV: 'test', DATABASE_URL: connection.href, PORT: 5010, JWT_SECRET: 'community-browser-fixture-signing-key-at-least-32-characters' },
+  async () => { throw new Error('Execution is outside this browser scenario.'); });
+await api.listen({ host: '127.0.0.1', port: 0 });
+const address = api.server.address();
+assert.ok(address && typeof address !== 'string');
+const apiOrigin = 'http://127.0.0.1:' + address.port;
+process.chdir(join(root, 'frontend'));
+const vite = await createViteServer({ root: join(root, 'frontend'), configFile: join(root, 'frontend/vite.config.ts'),
+  server: { host: '127.0.0.1', port: 34134, strictPort: true, proxy: { '/api': apiOrigin } } });
+await vite.listen();
+const origin = 'http://127.0.0.1:34134';
+const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE } : {}) });
+const learnerContext = await browser.newContext({ viewport: { width: 1365, height: 900 } });
+const adminContext = await browser.newContext({ viewport: { width: 1365, height: 900 } });
+const learner = await learnerContext.newPage();
+const admin = await adminContext.newPage();
+const checks: string[] = [];
+learner.setDefaultTimeout(15000); admin.setDefaultTimeout(15000);
+const title = 'Browser proposed count ' + suffix;
+const featureTitle = 'Browser report feature ' + suffix;
+const opportunityTitle = 'Browser fellowship ' + suffix;
+async function login(page: any, person: { email: string }) {
+  await page.goto(origin + '/practice/community');
+  await page.getByLabel('Email', { exact: true }).fill(person.email);
+  await page.getByLabel('Password', { exact: true }).fill(password);
+  await page.getByRole('button', { name: 'Sign in', exact: true }).click();
+  await page.getByRole('heading', { name: 'Community', exact: true }).waitFor();
+}
+async function reviewRow(name: string) {
+  await admin.goto(origin + '/practice/community?view=admin');
+  const section = admin.locator('section').filter({ has: admin.getByRole('heading', { name: 'Review submissions', exact: true }) });
+  const row = section.locator('.feature-row').filter({ has: admin.getByText(name, { exact: true }) });
+  await row.waitFor();
+  return row;
+}
+try {
+  await login(learner, people[0]!);
+  const form = learner.locator('form').filter({ has: learner.getByRole('heading', { name: 'Send a submission', exact: true }) });
+  await form.locator('select').nth(0).selectOption('CONTRIBUTION');
+  await form.locator('select').nth(1).selectOption('new_problem');
+  await form.getByLabel('Title', { exact: true }).fill(title);
+  await form.getByLabel('Topic', { exact: true }).fill('Arrays');
+  await form.getByLabel('Function name', { exact: true }).fill('countReadings');
+  await form.getByLabel('Examples (JSON)', { exact: true }).fill('[{"input":"values = [2,3]","output":"2"}]');
+  await form.getByLabel('Problem statement', { exact: true }).fill('Count every reading supplied in the input array.');
+  await form.getByLabel('Proposed grading cases (JSON)', { exact: true }).fill('[{"input":{"values":[900021]},"expectedOutput":1}]');
+  await form.getByRole('button', { name: 'Send for review', exact: true }).click();
+  await form.getByRole('status').filter({ hasText: 'Saved.' }).waitFor();
+  const proposal = await db.practicePublication.findFirstOrThrow({ where: { authorId: people[0]!.id, title }, select: { id: true, payload: true, state: true } });
+  assert.equal(proposal.state, 'PENDING');
+  assert.equal((proposal.payload as any).type, 'new_problem');
+  checks.push('Learner submits a structured new-problem proposal with private grading cases through the browser.');
+  await login(admin, people[1]!);
+  let row = await reviewRow(title);
+  await row.getByText('Review submitted details', { exact: true }).click();
+  assert.match(await row.locator('pre').textContent() ?? '', /900021/);
+  await row.getByRole('button', { name: 'Approve', exact: true }).click();
+  await row.waitFor({ state: 'detached' });
+  assert.equal((await db.practicePublication.findUniqueOrThrow({ where: { id: proposal.id } })).state, 'APPROVED');
+  assert.equal(await db.problem.count({ where: { title } }), 0);
+  checks.push('Administrator reviews the private proposal and approves it without changing the released problem catalogue.');
+  await form.locator('select').nth(0).selectOption('FEATURE');
+  await form.getByLabel('Title', { exact: true }).fill(featureTitle);
+  await form.getByLabel('Details', { exact: true }).fill('An original feature used for the moderator browser scenario.');
+  await form.getByRole('button', { name: 'Send for review', exact: true }).click();
+  await form.getByRole('status').filter({ hasText: 'Saved.' }).waitFor();
+  row = await reviewRow(featureTitle);
+  await row.getByRole('button', { name: 'Approve', exact: true }).click();
+  await row.getByRole('button', { name: 'Mark shipped', exact: true }).waitFor();
+  await learner.reload();
+  const board = learner.locator('section').filter({ has: learner.getByRole('heading', { name: 'Feature board', exact: true }) });
+  const featureRow = board.locator('.feature-row').filter({ has: learner.getByText(featureTitle, { exact: true }) });
+  await featureRow.getByText('Report this item', { exact: true }).click();
+  await featureRow.getByLabel('Reason', { exact: true }).fill('The request contains a reference that should be reviewed.');
+  await featureRow.getByRole('button', { name: 'Send report', exact: true }).click();
+  await featureRow.getByRole('status').filter({ hasText: 'Saved.' }).waitFor();
+  row = await reviewRow('Report: ' + featureTitle);
+  admin.once('dialog', (dialog: any) => dialog.accept('Verified the issue and removed the feature request.'));
+  await row.getByRole('button', { name: 'Remove reported item', exact: true }).click();
+  await row.waitFor({ state: 'detached' });
+  await learner.reload();
+  assert.equal(await board.getByText(featureTitle, { exact: true }).count(), 0);
+  const target = await db.practicePublication.findFirstOrThrow({ where: { authorId: people[0]!.id, title: featureTitle } });
+  assert.equal(target.state, 'WITHDRAWN');
+  assert.equal(await db.auditLog.count({ where: { userId: people[1]!.id, eventType: 'practice_publication_removed', resourceId: target.id } }), 1);
+  checks.push('Learner report reaches the private queue; administrator removal withdraws the public feature and records its audit receipt.');
+  await admin.goto(origin + '/practice/community?view=admin');
+  const opportunityForm = admin.locator('form').filter({ has: admin.getByRole('heading', { name: 'New opportunity', exact: true }) });
+  await opportunityForm.getByLabel('Title', { exact: true }).fill(opportunityTitle);
+  await opportunityForm.getByLabel('Company', { exact: true }).fill('Original test organization');
+  await opportunityForm.locator('select').selectOption('Fellowship');
+  await opportunityForm.getByLabel('Summary', { exact: true }).fill('An original fellowship used for scoped browser verification.');
+  await opportunityForm.getByLabel('Application URL', { exact: true }).fill('https://example.org/fellowship');
+  await opportunityForm.getByLabel('Remote', { exact: true }).check();
+  await opportunityForm.getByLabel('Publish', { exact: true }).check();
+  await opportunityForm.getByRole('button', { name: 'Save opportunity', exact: true }).click();
+  await opportunityForm.getByRole('status').filter({ hasText: 'Saved.' }).waitFor();
+  await learner.goto(origin + '/practice/community?view=opportunities');
+  await learner.getByRole('combobox').selectOption('Fellowship');
+  await learner.getByLabel('Remote only', { exact: true }).check();
+  await learner.getByRole('heading', { name: opportunityTitle, exact: true }).waitFor();
+  const result = await fetch(apiOrigin + '/api/practice/community/opportunities?category=Fellowship&remote=true');
+  assert.equal(result.status, 200);
+  assert.ok((await result.json() as any).opportunities.some((item: any) => item.title === opportunityTitle));
+  checks.push('Administrator creates a fellowship and learner filters its published public listing by category and remote status.');
+  await learner.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await learner.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await learner.screenshot({ path: join(output, 'mobile-opportunities.png'), fullPage: true });
+  await admin.screenshot({ path: join(output, 'admin-review.png'), fullPage: true });
+  checks.push('Community opportunity filters and cards fit the mobile viewport.');
+  await writeFile(join(output, 'report.json'), JSON.stringify({ kind: 'CodeClub community browser verification', date: new Date().toISOString(),
+    scope: 'Production React UI and Fastify routes against disposable practice_test users; original fixtures only. No demo data mutation.',
+    browser: browser.version(), checks, verdict: 'PASS' }, null, 2) + '\n');
+  console.log(JSON.stringify({ passed: checks.length, report: join(output, 'report.json'), verdict: 'PASS' }));
+} catch (error) {
+  await learner.screenshot({ path: join(output, 'failure-learner.png'), fullPage: true });
+  await admin.screenshot({ path: join(output, 'failure-admin.png'), fullPage: true });
+  console.error('Learner state:', (await learner.locator('main').innerText()).slice(0, 2500));
+  throw error;
+} finally {
+  await learnerContext.close(); await adminContext.close(); await browser.close(); await vite.close(); await api.close();
+  await db.practiceOpportunity.deleteMany({ where: { title: opportunityTitle } });
+  await db.auditLog.deleteMany({ where: { userId: { in: people.map(person => person.id) } } });
+  await db.user.deleteMany({ where: { id: { in: people.map(person => person.id) } } });
+  await db.$disconnect();
+}

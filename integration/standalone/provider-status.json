@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "judge0": {
+    "scope": "original synthetic exercises only",
+    "endpointHost": "ce.judge0.com",
+    "liveChecksPassed": 15,
+    "controlledCatalogueVerification": false
+  },
+  "health": {
+    "database": "ready",
+    "judge0": "configured",
+    "coordination": "redis-ready"
+  },
+  "googleOAuthEnabled": false,
+  "accountEmailEnabled": false,
+  "solverHintsEnabled": false,
+  "coachingEnabled": false,
+  "mockInterviewsEnabled": false,
+  "weeklyDeliveryEnabled": false,
+  "leetcodeSyncEnabled": false,
+  "leetcodeManualAvailable": true
+}

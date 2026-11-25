@@ -1,0 +1,564 @@
+{
+  "evidenceKind": "local-development-only",
+  "releaseGrade": false,
+  "candidate": "20f5919c4efa5550a937898471dda7d17edecf92-standalone-fixture-r1",
+  "languages": [
+    "javascript",
+    "typescript",
+    "python",
+    "java",
+    "cpp",
+    "c"
+  ],
+  "skippedLanguages": [],
+  "nativeImageDigest": "sha256:acfbe5930e559209195528a558c8c0ab45f4ff5ab2311ff7bc4f829a443f03a8",
+  "nativeIsolation": {
+    "network": "none",
+    "rootFilesystem": "read-only",
+    "workspace": "ephemeral tmpfs"
+  },
+  "limitation": "Local original fixture programs only; controlled Judge0 release matrix and missing fixture implementations remain required.",
+  "passed": true,
+  "reports": [
+    {
+      "slug": "all-paths-source-to-target",
+      "sourceDigest": "d1f6d99961611d4a6a662197157954240eff5f72c07ae79376bc2792d6dd6e9f",
+      "contentDigest": "077694a4432952a992f88ae25395e4afe5caa082bdc79cdce1d8e30f9a934412",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "53f7f51de3baa42bf4b4eb4fbe1c7411684ad2176835fa7ebf6f57f1d3228346",
+          "wrongDigest": "5773f3e4621e01c4445c26f7d8d463d250b72a8de95b635c431c161644097284"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "b635f3f9feb937c0ff375886ca2c828740db12e4dca0218e7af24722e20ae541",
+          "wrongDigest": "c6a83e55d5f5831cdfad35896a69839fb3e762893430d8d6601267c140ed6634"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "b5449317254ae4b29a0049aca529a5cb0bfe6e5f1f4bcd1df72732dd3dcb44f2",
+          "wrongDigest": "be0f6fdab841ff9ddc3440a702b0034e9948988a877c75a390679f1c4e1d181c"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "ee8a96a662ee433bf8c597f844d9d7de377fa55e28ec0a40ffd1bc9f98b67ae0",
+          "wrongDigest": "2709fb910ffb3209a3eeaeb7a8268170a71eb3834921c8f0cdaafde951d14335"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "b32d5aaab38f4c3b3a6f689cfd09f5882f8a787621c1b066d23cc974df32b733",
+          "wrongDigest": "b13db77a15ac9df0f2eb7a7dae99c004df33672ef3cc4b56623e90cf42582918"
+        }
+      ]
+    },
+    {
+      "slug": "clone-graph",
+      "sourceDigest": "f82de74a337bce76b95057f842ea163acf7d2cc64fff123e1d8a20c3a49c4806",
+      "contentDigest": "4dd42154f96f053051e1d10fe6fef1d355c71e764e36b2258129c34cddc3104b",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 3,
+          "totalCases": 4,
+          "acceptedDigest": "271bca7b3e61b2a05468f7763b570348efdd7cb1d1d7b00dfc901269f0543d59",
+          "wrongDigest": "419fabf3eebb47d11564a26eac28c1e8c4bd3c729874080a68860670fc9229d3"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 3,
+          "totalCases": 4,
+          "acceptedDigest": "9f5b254f67344e06861dd370481588aced61d01876e3c49c6b15a0207c914d37",
+          "wrongDigest": "8c739b1dfc4c84a1fd19a6cf7c364ea229185192f12172d2a1efdfabc34dbdbe"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 3,
+          "totalCases": 4,
+          "acceptedDigest": "4d990782cf7701ad623ac120113ea6254f5786aaf2f26da0e9b9a016bbb9bc65",
+          "wrongDigest": "9ca2b2c0e68c0b965eca7a9f7fc77efc31f890bfb79a1722c1c632860ba08d7b"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 3,
+          "totalCases": 4,
+          "acceptedDigest": "9998be7ddcb73854e015bc1c6cc58fcd5dcbb5d2808d2ac7ef6cf3cd3cb9a544",
+          "wrongDigest": "67e73a5fbe676938732fa57b585676ca9b62906dffa6752f05194b8dbab84056"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 3,
+          "totalCases": 4,
+          "acceptedDigest": "d65fc946f01c977fff0d2a7ae76fbb31696d8f98dc32570d207281cc493a5a32",
+          "wrongDigest": "8119c08b7971422f2827e97af5158ae661121c65bf0b8eee56a5809b65624e57"
+        }
+      ]
+    },
+    {
+      "slug": "contains-duplicate",
+      "sourceDigest": "4a41f71adbe724fec69deee5d55e0297baeacedb5733c758feafe0544bd772fe",
+      "contentDigest": "0280289d6b6ac3d5f50522349f229b7cb0fa11881bbc28ef44f05ad32d5876d0",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "193d32c07369bed663e326d84d3f486a9e5b499618b4bb13ce4dbcc5c368ecb4",
+          "wrongDigest": "e8814cb271a87abccb271296860cbedd9ec6131e6755220c1a493c03f3c6ff1f"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "9cd84a4e91e0d20ed30527038c3fc0d246bdbc2e9304592e501e4f093e4c9328",
+          "wrongDigest": "c1566b7b7e3bd26986d32459458e2ce1c713abfd4e380c5d036b36d83da32124"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "57482518c85c8d1516eb1af38c5c9a34bda1543f413d06cae64ed62500eea667",
+          "wrongDigest": "6aa912ed2e277b69164b16441e4acd9e5bb070ac43f417ff8903a2d0591b7cd0"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "80bf7b9c4b47377c8033a566f1beaa4780db2311f1c15d29d4df3643d88678a7",
+          "wrongDigest": "6443f7eed8e5001608779b567857d17bc7b1f7da6248be5ea0a66cbab12ece09"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "d0ae2b48bb057ece6e9f06cbe727cd283f07465000537a3ffe1d11baa843e1e8",
+          "wrongDigest": "c0aca38d4663bbb519c30c905a7e2887c30f3b45b85a0eb1e27f629c1ac7ca49"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 4,
+          "totalCases": 6,
+          "acceptedDigest": "3881f50c374633526909bef16e7a3a83f0492bcf1b8e4e8a6ace0459ea5fecf2",
+          "wrongDigest": "4d04073aeed68de1ca4619ea20536c753771af8237aeb2155ad7e98ed47ff62d"
+        }
+      ]
+    },
+    {
+      "slug": "first-bad-version",
+      "sourceDigest": "b002d25e727d0ee02795efcf0bd19a41bc32f0d3724ace615b652bcaffee38dc",
+      "contentDigest": "38eec82f90dcf308be9563a0cbf6bee5725b9f0937f67717ab71d7badeeef5ae",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "bf8d7a24562220febb7c820dcc33f5101a067b3034962ea708689a48782eb184",
+          "wrongDigest": "bfb7d08437bed3f41192f4ef6acda1985d68227346b1542001e05aa8eff3bb07"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "788ab998fdc36c880bdd9eefbd35e3080cf406201a4dfc381a02cfe9cc93e0c6",
+          "wrongDigest": "08816abf87b6ebd9f8ae7e68dd875842b72e19e0780a76563220a76fee5bbe4b"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "63d4cfe30aa7d2fa5d384aa2b0eb6a6b5d2f2360c8836bcd2dd7b25914d578c6",
+          "wrongDigest": "4fafa3c858a0abd9e5146ab1dc510e7d5e6734eae1a156265336c4536330d502"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "3d35595de688453f2eef171ec6ca14ae008a1ae8a4a56912327482f8a61dd567",
+          "wrongDigest": "2d868723330d8ab885833e0d21be2eea7f76c48b4b1d6f0e7c27f110eb8087cb"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "8e1c1dfae62ff7807e61be24b26bc24fce67c33efd633ccd31ff6ab0b5caae5a",
+          "wrongDigest": "9f4e4250589158c5b985f764f1615590b7b91002216f2c787caf93c9eccd89b3"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "0848d58b2ddb705101c96bdc542881c7a5b5d48fb875a23fca1ea05f605c59d0",
+          "wrongDigest": "0a727a6628822bb05b9a79534e0a950646330dff7f68bd0f320ee42bd02ba23f"
+        }
+      ]
+    },
+    {
+      "slug": "linked-list-cycle",
+      "sourceDigest": "5d47357db5419a6702d2834e281a98dd6b0f9563b5a6c434eb3a369007f5d292",
+      "contentDigest": "fa8ac415066a4ab25f6a30078900b7c2b985ef3fe5e00c2646e5aec9d8c058ca",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "ebed8b49eb62cfd81c9060d0a3095b7892c0c6c6412cdf777e2d30f61e234a91",
+          "wrongDigest": "d692abe1dc24dff5248bb03db70e908fcf05a053d454990bcb0f6df23bbe7d21"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "efa55a23cac5237ad25b15911058ffd633ae32d61d13a794e6a5835cb87cd25f",
+          "wrongDigest": "3048bf7a95751ffdfb2b46fdb06a72cbfe2924a9140c91a721f07f84274428a5"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "423ab2f7661da5f6530f882de5036bceeabeac75a1d3b1904cd13f5b9cb3bdf0",
+          "wrongDigest": "121a66a4057bc6770954d6cef998e9703a8e9636e67d7de9bab67eba01343d28"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "dc2688ff9e935eb227664ad856cd2e201731bf9f1b4be2bbd0d055e24e3de6e4",
+          "wrongDigest": "3a77f41531f407ad4a081532cf3140e10a44fb4ecf7b8dcbb216700291a31af1"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "c306b59e9bd9938fa81c575ebc6a1a5817bcc87036fb5c9dcb0af1677e9b0990",
+          "wrongDigest": "54886c20bcb422144dcab8d7e87f8461b3675a98bd15d2de6d39a2f5218c651f"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 3,
+          "totalCases": 5,
+          "acceptedDigest": "f4b6ea4b5782b358abf304df7b927d26a116f49b24e1c26e2df4a5f0bd26d02b",
+          "wrongDigest": "ab3b43eb6be3fd0d90d678059044ddcdf922688a522d15f5e77891abc185dffd"
+        }
+      ]
+    },
+    {
+      "slug": "min-stack",
+      "sourceDigest": "8fa5a5500c8fd0f33b8c2d9f5d85ef69f91fd994a51eb260b36558970a2d556e",
+      "contentDigest": "0368043191017dd86ac56a5192dd64300408a27b73ea528a89687c0c3533d33b",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "9125a6afcf9dd941e5b141034905c91be63123d5feccdee712859c4b714d525c",
+          "wrongDigest": "95fe0927d9faba8526ba47fd02db197ec14df65b685ee76d6fd9f1b37c4bd8fa"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "a0d06399bf77b2aa7c66866251d9f0d15817c276c3f515f5d4457006bc03fb72",
+          "wrongDigest": "f182f3fa152b8ddf212fbcc131a791846aced196dba53cb5dabbfa68240c98a4"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "de773a2e3f2f9b5e1773d75a59e61702250c0d186d6d61ca83c19438463cfcfb",
+          "wrongDigest": "396973495d8221bac407d46f62931960ffd0f4b290fcd59f11194cc06ec1f56c"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "ccc2fe986186d91a571f88c642670e9bfd2998b9acd7ae691e47d1c398191aff",
+          "wrongDigest": "6b401db71e188cdaeb020ada41e6c6750c3c57760942491fb3bd198265c81483"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "49e239df503b5ef711716b113128aa4d6a99e47aa303517091d1e378ab2ad92f",
+          "wrongDigest": "2edd02da5d6f1708efc2bc23ad8af68bf66c2dfb3d3c0c59042bcaa4cb432431"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 4,
+          "rejectedCases": 4,
+          "totalCases": 4,
+          "acceptedDigest": "c41cb7243ba16a62497b4332c917d2ab4926e464d9004732111cc475a9e3ec19",
+          "wrongDigest": "58102dde000c739aca114f5ad783f6958bbf5eb3e8ebd754f7bde8bccbfbb8bd"
+        }
+      ]
+    },
+    {
+      "slug": "random-pick-with-weight",
+      "sourceDigest": "2961c3aa10dd6817e6009ae80dcceed34171d6ff3b19057953b877ed80cf0635",
+      "contentDigest": "c300e3561401ab773e180258b769fdce29a580a448c7fc70976c3f1845ed495e",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "69a5c36e57a2a166f0c36a5cebd546c2a1731e9f11d77761c603d6efcddfc963",
+          "wrongDigest": "c799702255cacbe3b1fe8aea6472434749097a10be0b8135cf20d1384267c49d"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "a652c3903598bf985d2acdef392ea99e5e22b1132ca744d9449adad7a36160bf",
+          "wrongDigest": "83a2a7ef826303c8fdfbe017a423872494387ed162afc40d0709af713563a28f"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "6b78002f75abce8953a0a2cb76f205b4bb2d3aa363e31245dabf701ba0a2cb4c",
+          "wrongDigest": "42f6645bde2e3a64145344e0ddba6f4ac6a4a5709b0448beaf59df3e0b3fb636"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "ba4acabf5f6b3d709a4d18c07f5544c3f2aa0239d5f086bc45b20b351e9876c3",
+          "wrongDigest": "c4bbf093f383f591cc1d3a20219d3c2d647ef71c1471340a5e7d4a7e9565a478"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "e36b6ea0e109a2fec9c84aed4f5bffb0ee129bc76cab30ac8be02c14b4481478",
+          "wrongDigest": "8fde90513ac1e32028e6610893312cb75a26fe5e9ea9a01acdd194a98ed1e4fa"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 3,
+          "rejectedCases": 2,
+          "totalCases": 3,
+          "acceptedDigest": "ed6da2e2ffad66a427ecd60ee55d82743c6d429be6b00d9acaecb9dee5de0129",
+          "wrongDigest": "a2c57174c3411f329404460e97fe325cca6daf99b5d0c95f360ee23ff96b2280"
+        }
+      ]
+    },
+    {
+      "slug": "sort-colors",
+      "sourceDigest": "1af02cfde98f3533f98f5abb99c7e6af4402a07bbb579db4f9e536024e5e1d85",
+      "contentDigest": "84ff3f96f491269ed6df895a5efa61f7ea3b118f0d88dcc55878fe790522687b",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "576dfc0f12da68daf760434e956540c574d5b99cfdcc2bb6c14d84437da7d9e5",
+          "wrongDigest": "3a25acfcd24a2323d2755b208c447e7e117052b2c877efe739b31fe32bbfa667"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "4ac8e77ae4909fed43649ff2888d63127f232bf306dd1631d137184534c34b97",
+          "wrongDigest": "6f1a989186f9cd7807a32ffbdafa261a871976e27b8d47875aeac86623a713e6"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "e4daf27b8735c7cb24e48f4a99952831c7bb8ce03a6977c78620adbb0275bf49",
+          "wrongDigest": "63fac5e1e331dbf3f2b373475b24686047a692fb6ff5e4f7ae977771d5f3bfb9"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "42946122ca061fa7aa2418ab5fd39880d663ae37cd2b55233cff071d3e4b105d",
+          "wrongDigest": "e29cec96e4ea9bcef48e9fc2c62818aa0ec20047fd107c05b1e72b0b76c9943f"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "6784f025ba222e325edb3d9b0c9ffa91cdc85b640e70ce63d9a2a90f90a23f86",
+          "wrongDigest": "38c9ddca1391a025356fa7e0dd8e824150f77dde181aeb982897bf0a5c5e2ded"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 5,
+          "rejectedCases": 4,
+          "totalCases": 5,
+          "acceptedDigest": "d59765dc6a414caf12a77830671d27282aac04d79e007e25c5e89664b8131302",
+          "wrongDigest": "558621839a1f43ae7bee96f0d19582fc183335c6d85e02b27ae54ad72b3fd0a9"
+        }
+      ]
+    },
+    {
+      "slug": "two-sum",
+      "sourceDigest": "281bfbc4a6c2e78523d705bd8916915ac1de3774716e486d6b1dc092a3c91101",
+      "contentDigest": "4ab460d73df182116fe61a652e8ea4147e2cfb898bd10dc98cf16b4250e432e7",
+      "status": "passed",
+      "languages": [
+        {
+          "language": "javascript",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "ab4ca0f00da5db5906e4a82d8cc3764541598214f3c47cada570255106ddf01d",
+          "wrongDigest": "5972fb0ca777196b0ad058076dc56c7e7dd1bdc3c13c58a38da12dffe18dbec7"
+        },
+        {
+          "language": "typescript",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "16c797667ad27d32849578bb16157dde4fc8e50ac8d0fb03edc54a60dfceeb8a",
+          "wrongDigest": "dedaadd4eb1b7214923b7cc61645be6d4cac16fba2be17a68f5563178977153d"
+        },
+        {
+          "language": "python",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "1200aab1646292aa146ec986f3322fec9a449be887c09fa7b306a462c3c8f032",
+          "wrongDigest": "abd52c0a35ce8a7a243d5328e69564da74b40c1a737c6a4ce27037a07d91101c"
+        },
+        {
+          "language": "java",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "43b422085e632e8889becc4e7b72f62635c38892929a3ed58141541ce57bff6c",
+          "wrongDigest": "2cbc7e0edeb9f178d4c333046932195a4e48c6b37fdf7aa06aa24cd91dc94b3e"
+        },
+        {
+          "language": "cpp",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "a59b668767bb9511fce9cdfed0f27b0c07ba283341b89e7f8230ad0014e3ca00",
+          "wrongDigest": "24b8cdd2032998b6c8f68d4f468a7e84d48fec0927d0645e4e066f91239db88f"
+        },
+        {
+          "language": "c",
+          "status": "passed",
+          "acceptedCases": 6,
+          "rejectedCases": 6,
+          "totalCases": 6,
+          "acceptedDigest": "c996df03b4b036ffc475b442fe74f7be6498baad0d2b84588e52e0030c8372e7",
+          "wrongDigest": "14125aac5b83ef20a692e8bd20d41440d7dbb93be9ef5e72f608458f6191c671"
+        }
+      ]
+    }
+  ]
+}

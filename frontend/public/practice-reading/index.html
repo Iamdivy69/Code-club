@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex"><meta name="theme-color" content="#101114">
+  <title>Public reading · CodeClub</title><link rel="stylesheet" href="./style.css">
+  <script src="./reader.js" defer></script>
+</head>
+<body>
+  <header><a href="/practice">← Practice problems</a><span>CodeClub · Public reading</span></header>
+  <main>
+    <h1>Read saved problems</h1>
+    <p>Open a public problem while connected to save its statement, examples and editorial on this device. Keep this page open to read offline. Opening a new page requires a connection.</p>
+    <p id="status" role="status" aria-live="polite">Preparing reader…</p>
+    <label>Browse public problems <select id="browse"><option value="">Loading published problems…</option></select></label>
+    <label>Saved public material <select id="saved"><option value="">Choose a problem</option></select></label>
+    <div class="actions"><button id="refresh" type="button">Refresh saved material</button><button id="remove" type="button">Remove saved copy</button><button id="clear" type="button">Clear all saved material</button></div>
+    <article id="problem" hidden></article>
+    <p>Run and Submit require a connection. Your code, notes, sessions, submissions and private material are never saved by this reader.</p>
+  </main>
+</body>
+</html>

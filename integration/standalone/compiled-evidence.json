@@ -1,0 +1,160 @@
+{
+  "evidenceId": "ev_72af77762663599c7b3961c02224f572003e6f52c260999dd7c3b4bc5175dbb1",
+  "artifactSha256": "9d67aca2caf7b8270b397d73b6afea5c13af35e81fcf26641e2a8c223f9f391d",
+  "statistics": {
+    "relevant_files": 15,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 605624,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 15,
+    "visited_ast_nodes": 167967,
+    "findings": 476,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "coverage": {
+    "application": {
+      "status": "partial",
+      "truncated": false,
+      "omitted_count": null,
+      "limits": [
+        {
+          "name": "javascript_analysis_worker_heap_limit_bytes",
+          "value": 1098907648,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_timeout_ms",
+          "value": 300000,
+          "unit": "milliseconds"
+        }
+      ]
+    },
+    "semantic": {
+      "status": "partial",
+      "truncated": true,
+      "omitted_nodes": null,
+      "omitted_relations": null,
+      "limits": [
+        {
+          "name": "javascript_analysis_worker_heap_limit_bytes",
+          "value": 1098907648,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_timeout_ms",
+          "value": 300000,
+          "unit": "milliseconds"
+        }
+      ],
+      "families": [
+        {
+          "family": "boundary",
+          "status": "partial",
+          "retained_relations": 59,
+          "omitted_relations": null,
+          "unknown_count": 40
+        },
+        {
+          "family": "call-flow",
+          "status": "partial",
+          "retained_relations": 1288,
+          "omitted_relations": null,
+          "unknown_count": 1436
+        },
+        {
+          "family": "child-process",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 1
+        },
+        {
+          "family": "closure",
+          "status": "partial",
+          "retained_relations": 1589,
+          "omitted_relations": null,
+          "unknown_count": 1
+        },
+        {
+          "family": "configuration",
+          "status": "partial",
+          "retained_relations": 1,
+          "omitted_relations": null,
+          "unknown_count": 1
+        },
+        {
+          "family": "data-flow",
+          "status": "partial",
+          "retained_relations": 14841,
+          "omitted_relations": null,
+          "unknown_count": 1714
+        },
+        {
+          "family": "event",
+          "status": "partial",
+          "retained_relations": 5,
+          "omitted_relations": null,
+          "unknown_count": 2
+        },
+        {
+          "family": "object-flow",
+          "status": "partial",
+          "retained_relations": 1927,
+          "omitted_relations": null,
+          "unknown_count": 2566
+        },
+        {
+          "family": "promise-ownership",
+          "status": "partial",
+          "retained_relations": 242,
+          "omitted_relations": null,
+          "unknown_count": 221
+        },
+        {
+          "family": "request",
+          "status": "partial",
+          "retained_relations": 12,
+          "omitted_relations": null,
+          "unknown_count": 4
+        },
+        {
+          "family": "resource-lifecycle",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_count": 1
+        },
+        {
+          "family": "timer",
+          "status": "partial",
+          "retained_relations": 3,
+          "omitted_relations": null,
+          "unknown_count": 1
+        }
+      ]
+    },
+    "application_unknowns": 1,
+    "semantic_unknowns": 5988
+  },
+  "limitations": [
+    "Boundary extraction covers unshadowed JSON/global coercions plus parse and validation method candidates.",
+    "Child-process extraction covers asynchronous node:child_process creation, literal argv/env/stdio options, exit/error listeners, and kill signals.",
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Configuration extraction covers process.env, process.argv, node:fs reads, and direct logical defaults.",
+    "Event extraction covers EventEmitter-style literal registrations, removals, and dispatch candidates; dynamic names remain unknown.",
+    "Function fingerprints are static candidates; equal digests can remain ambiguous and do not prove behavioral equivalence.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Local data flow does not claim control-flow-sensitive reaching definitions or arbitrary dynamic property resolution.",
+    "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+    "Request extraction covers fetch, WebSocket, node:http/node:https construction, direct option fields, and exact local response consumers.",
+    "Resource extraction covers built-in filesystem/network acquisition and exact local close/destroy/end handles.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "The semantic graph contains static syntax observations and conservative relationship candidates; it does not claim runtime execution.",
+    "Timer extraction covers global or node:timers scheduling and exact local-handle cancellation.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code.",
+    "frontend/index-CKyLyxgI.js: Resource constraint during analyze_javascript_application: Owned JavaScript worker exhausted its heap while analyzing frontend/index-CKyLyxgI.js during semantic"
+  ]
+}

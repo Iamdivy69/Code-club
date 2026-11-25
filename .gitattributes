@@ -1,0 +1,21 @@
+# Normalize source across Windows, macOS and Linux.
+* text=auto eol=lf
+
+# Preserve binary artifacts.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.pdf binary
+*.zip binary
+*.dump binary
+
+# Markdown uses deliberate two-space line breaks.
+*.md whitespace=-blank-at-eol
+
+# Applied migrations are immutable: preserve their bytes and historic whitespace.
+backend/prisma/migrations/** -text -whitespace

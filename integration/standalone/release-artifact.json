@@ -1,0 +1,11 @@
+{
+  "candidate": "codeclub-standalone-0.2.0-rc.1-reading-20261125",
+  "sourceRevision": "df48a20118766571ac1e75a14a77cff6cf60de8aa0be4d79b7c076cbdc5a0a55",
+  "archive": "D:\\PROJECTS\\CodeClub\\.local\\release\\codeclub-standalone-0.2.0-rc.1-reading-20261125.zip",
+  "sha256": "d4b85bb8d7a45bcfc76abd55cb36c7665d998f51ec05a3823e0bb32fc0fb2764",
+  "bytes": 1821280,
+  "files": 304,
+  "credentialsIncluded": false,
+  "databaseDumpsIncluded": false,
+  "approvedHiddenCasesIncluded": false
+}

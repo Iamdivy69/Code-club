@@ -1,0 +1,35 @@
+{
+  "kind": "CodeClub public offline reading browser verification",
+  "date": "2026-11-21T16:49:10.341Z",
+  "scope": "Real Chromium and production reading route using an original in-memory content fixture; no demo database mutation.",
+  "playwright": "1.65.1",
+  "browser": "151.0.7922.34",
+  "checks": [
+    "Online reader saves only the whitelisted public API projection and renders text without executing markup.",
+    "CacheStorage contains no HTML, authentication payloads, private APIs or credentials.",
+    "Previously loaded public statement, examples and editorial remain readable with browser networking disabled.",
+    "Fresh HTML navigation requires the network.",
+    "Reconnect removes withdrawn material from both rendered content and the saved API cache.",
+    "Reconnected public content refreshes to the current published version.",
+    "Cross-tab account-switch cleanup removes reader content while retaining unrelated application storage.",
+    "Mobile public reading fits a 390px viewport."
+  ],
+  "assets": {
+    "index.html": "00c39fb448624d49f47d27397a656edd8c42af90ad08a1cff5d92a00f1a4af27",
+    "reader.js": "b203d599c5a4cb0b475659c1948bb2a21fbac083668e408c9ad13409bde889b2",
+    "sw.js": "6b83317c63a68dcab3263340be80b83cf5043d3cb6aa3f2572b051fff7b51605",
+    "style.css": "ab16b7e26b3ef086422f792805e4fe805310af39b18bcada720906c78beae3ea"
+  },
+  "apiRequests": [
+    "/api/practice/reading-index",
+    "/api/practice/reading/reader-example",
+    "/api/auth/me",
+    "/api/practice/reading-index",
+    "/api/practice/reading/reader-example",
+    "/api/practice/reading-index",
+    "/api/practice/reading/reader-example",
+    "/api/practice/reading-index",
+    "/api/practice/reading/reader-example"
+  ],
+  "verdict": "PASS"
+}

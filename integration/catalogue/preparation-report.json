@@ -1,0 +1,5110 @@
+{
+  "candidate": "20f5919c4efa5550a937898471dda7d17edecf92-standalone-fixture-r1",
+  "sourceRevision": "20f5919c4efa5550a937898471dda7d17edecf92",
+  "approvedManifestSha256": "5e91be60c445285bee911555279298b767c35ae78b4cce1e4587aeb7c383e407",
+  "candidateManifestSha256": "8265402cd8d40429d22c9b8cd412b1bb49a79646700c3d1ea0c162b9c413f703",
+  "pinnedDigestMatches": 250,
+  "convertedEntries": 250,
+  "structuralLanguagePairs": 1488,
+  "fixturePreparedPairs": 52,
+  "fixtureMissingPairs": 1436,
+  "releaseRuntimeVerifiedPairs": 0,
+  "releaseGate": "OPEN: controlled Judge0 verification and remaining solution fixtures required",
+  "repair": {
+    "slug": "two-sum",
+    "location": "hidden case 1",
+    "reason": "Invalid expected indices and multiple valid pairs despite unique-solution statement.",
+    "correction": "Replaced with an original unique-solution case; all stored Two Sum cases have exactly one valid expected pair.",
+    "originalSourceDigest": "7d09e35b4c95e22b666e9baaca98e2073acc7b6c6fa9b0415c55485151169fad",
+    "candidateSourceDigest": "281bfbc4a6c2e78523d705bd8916915ac1de3774716e486d6b1dc092a3c91101",
+    "disposition": "draft-only until controlled runtime verification"
+  },
+  "additionalRepair": {
+    "slug": "min-stack",
+    "hiddenCases": [
+      1
+    ],
+    "reason": "Final top() expectation did not match the stack operations; independently replayed all hidden operations.",
+    "originalSourceDigest": "ea6c3905edc502084154490a0566331d83c078b519482abe9c16449aff143fca",
+    "candidateSourceDigest": "8fa5a5500c8fd0f33b8c2d9f5d85ef69f91fd994a51eb260b36558970a2d556e",
+    "disposition": "draft-only until controlled runtime verification"
+  },
+  "sourceImplementationAudit": {
+    "folders": 250,
+    "solutionDirectories": 0,
+    "implementationFilesOutsideStarter": 0,
+    "editorialsWithCodeFences": 2,
+    "implementationCodeFences": 0,
+    "note": "Both code fences contain text pseudocode or diagrams."
+  },
+  "entries": [
+    {
+      "slug": "3sum-closest",
+      "sourceDigest": "f2cdda0d318e49d2769e6a3caa9095a7e55360d8013d8bdaeb9990f2d311941c",
+      "contentDigest": "4dcb254ce372bccc896640ef391ed27c84a95a8f0ccb8431d14ac8342591a22d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "3sum-smaller",
+      "sourceDigest": "dadb6d5a920274689eaaf5f3bf6d771f2b43248cf419f43b893baab697adaa30",
+      "contentDigest": "8f81aaef60b61e3fec1d8b80ee5916acf3338bbe01da8740cbef555d256a3f42",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "4sum-ii",
+      "sourceDigest": "ab97895c700a663caa716233a2b7b4b4597e76a43ae45d12b349863a70e21174",
+      "contentDigest": "1a651dd2f3c7bb2e778379f6b2610b315d56157de3d8b2ec5259a41d59d1855f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "accounts-merge",
+      "sourceDigest": "002bc32d722d87f240bd97b952b050b4365d89dc8ec49c01a97eefb127a2a415",
+      "contentDigest": "7f398dcadc51fb970fe4076e94d7ab8cd193c16f804cbf923569323a925af472",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "add-two-numbers",
+      "sourceDigest": "b96af5eb63e734bd38dd8b83bd2b840b3a439e41b1db0caf46859c085be402bf",
+      "contentDigest": "9ef97cb65fa98bca6b53c11977759818de69020d54e404e64764a0c16ac48099",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "alien-dictionary",
+      "sourceDigest": "153dba978bcbb22daf8fb610f0ca61dac955c34ef2f82b609e4985bd29a6aad8",
+      "contentDigest": "367aeb81b2db87c1f861dd0f37d35b586e4dc3b4c406c1cf899aad9a921b0a70",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "all-paths-source-to-target",
+      "sourceDigest": "d1f6d99961611d4a6a662197157954240eff5f72c07ae79376bc2792d6dd6e9f",
+      "contentDigest": "077694a4432952a992f88ae25395e4afe5caa082bdc79cdce1d8e30f9a934412",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "53f7f51de3baa42bf4b4eb4fbe1c7411684ad2176835fa7ebf6f57f1d3228346",
+          "wrongDigest": "5773f3e4621e01c4445c26f7d8d463d250b72a8de95b635c431c161644097284"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "b635f3f9feb937c0ff375886ca2c828740db12e4dca0218e7af24722e20ae541",
+          "wrongDigest": "c6a83e55d5f5831cdfad35896a69839fb3e762893430d8d6601267c140ed6634"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "b5449317254ae4b29a0049aca529a5cb0bfe6e5f1f4bcd1df72732dd3dcb44f2",
+          "wrongDigest": "be0f6fdab841ff9ddc3440a702b0034e9948988a877c75a390679f1c4e1d181c"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "ee8a96a662ee433bf8c597f844d9d7de377fa55e28ec0a40ffd1bc9f98b67ae0",
+          "wrongDigest": "2709fb910ffb3209a3eeaeb7a8268170a71eb3834921c8f0cdaafde951d14335"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "b32d5aaab38f4c3b3a6f689cfd09f5882f8a787621c1b066d23cc974df32b733",
+          "wrongDigest": "b13db77a15ac9df0f2eb7a7dae99c004df33672ef3cc4b56623e90cf42582918"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "asteroid-collision",
+      "sourceDigest": "97b0c9d868a0ca8f166aed9fce6d99514a972ef4944adacd27f8bf5c648a3f8d",
+      "contentDigest": "678ea6e8c0e086b63e5bfc465b8ffbe17c784ac471303c346771d6d70a20453d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "basic-calculator-ii",
+      "sourceDigest": "63f0bd0a048c0d0a6ca2df36733112574f9252d86d4ac17ec44e4ea37c86daea",
+      "contentDigest": "69e42fefb6b9f20adc52ddb958769949baccadc634d85b7b3474fed718728f79",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "best-time-to-buy-and-sell-stock",
+      "sourceDigest": "cde7885173d3d9f4230982544240716bfc39978b6528b45523c89b3b73b62fad",
+      "contentDigest": "08cffc95e5e8705819be4bcbff573dc4ee44e068e2bdb3fcee4795557bdc0823",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "best-time-to-buy-sell-stock-iii",
+      "sourceDigest": "24a6309ac06301df5cb3935ab1d8f4886bc8c6e89c74341d0e028ce8912ba7b6",
+      "contentDigest": "93501d0ac36c3fe378c5b6acd7f7c47b8936360b0a3cafd192372be83c97d639",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "binary-search",
+      "sourceDigest": "5a461a32b89c5206a4190360950ce6969476d04209f0fca2fbe551133c8378f4",
+      "contentDigest": "38c1399335c8748e9a0ec12c89ccade74da949f06e055fa88ff3db22a08a5682",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "binary-search-tree-iterator",
+      "sourceDigest": "f8c7ad5ab81bdfad983a9b36459ea73d86f8fa8a18fe0015c1f283376610e234",
+      "contentDigest": "5d26c226542f44e67b31269ad86f62b46ff7685f61d99829364baa5327cd5665",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "binary-tree-level-order-traversal",
+      "sourceDigest": "a1c09388db29d0fcf71937cd47bd379305f8f8841ff58625e8928c56ef48bc41",
+      "contentDigest": "b4b83282471aa3acda9724418536abf3be1327add0ba485b2c4048cdbe7d06c4",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "binary-tree-right-side-view",
+      "sourceDigest": "cb5c3898af6a217852a5b2e22ddc5eea60eb0a3c5599194a481ad7613e5d6677",
+      "contentDigest": "070bacf73e523060fdd68c71687511847d15123e80734606c445e10610337fef",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "bitwise-and-numbers-range",
+      "sourceDigest": "0d581f8977fb283ed311bb897ad70df82f17e715b59415b2edeb8d033eea8b9d",
+      "contentDigest": "87f678082c03af0a58db8763b48e3a9f340bf4cde0c69ffd54c7c4520d0c9cd6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "boats-to-save-people",
+      "sourceDigest": "21ad92aa77611c193339690ae3d1b644a614359f9897c698280c057114b0b548",
+      "contentDigest": "655780f485d69938c658554291eab529bcb20ede6a79f1d1b09486c6bee61d3b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "burst-balloons",
+      "sourceDigest": "b5b0a24c27b21ebb4eb3d31a579ca4319425b97f44f6fc304dddc5636bca0927",
+      "contentDigest": "25f82916b2da01c5bdf1fd6f2645b0644c7c0c4c23a5b9cccb4cef5d0396ba5b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "candy",
+      "sourceDigest": "46150acec0a5167c2932e179a050d1d962064bded4dccd14e2856521c6bbf9ca",
+      "contentDigest": "17a441521f81d56629ff15bae2bd54bf563b1f7ad1a77551fff6effe72feb932",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "car-fleet",
+      "sourceDigest": "b7870d9a4398e74279ac36d44e7769b44f91ed56e758596a7b5b874afb5f2ede",
+      "contentDigest": "cf742360eab7dd6e545be0f5613177021995b64c749125c7277a913152697a4c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "cheapest-flights-within-k-stops",
+      "sourceDigest": "bae957e70f9ce2e7cb319db9acd6076b8a05a56eea9303946415ddd7d8246b07",
+      "contentDigest": "556118ef1da32bee3495d2d7f3b79a280ee9f53429394d9739c193222f4eee18",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "cherry-pickup",
+      "sourceDigest": "451676b8a27654a0a802097d32dc085c79b8443908108c81b92cc8f6861ad459",
+      "contentDigest": "5181783052cfbe4db15de4fbc26eba88e31b7ad937ec5f37ad39ee3ad9468862",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "climbing-stairs",
+      "sourceDigest": "79c0543a1fa4d50edd74f9f33590e72e561a1d504c98cd95254f4e6148a473e0",
+      "contentDigest": "875cb356ce3ec8a71e3aca9661ab29f7736fa49ec60369c1ddf50571774385a1",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "clone-graph",
+      "sourceDigest": "f82de74a337bce76b95057f842ea163acf7d2cc64fff123e1d8a20c3a49c4806",
+      "contentDigest": "4dd42154f96f053051e1d10fe6fef1d355c71e764e36b2258129c34cddc3104b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "271bca7b3e61b2a05468f7763b570348efdd7cb1d1d7b00dfc901269f0543d59",
+          "wrongDigest": "419fabf3eebb47d11564a26eac28c1e8c4bd3c729874080a68860670fc9229d3"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "9f5b254f67344e06861dd370481588aced61d01876e3c49c6b15a0207c914d37",
+          "wrongDigest": "8c739b1dfc4c84a1fd19a6cf7c364ea229185192f12172d2a1efdfabc34dbdbe"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "4d990782cf7701ad623ac120113ea6254f5786aaf2f26da0e9b9a016bbb9bc65",
+          "wrongDigest": "9ca2b2c0e68c0b965eca7a9f7fc77efc31f890bfb79a1722c1c632860ba08d7b"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "9998be7ddcb73854e015bc1c6cc58fcd5dcbb5d2808d2ac7ef6cf3cd3cb9a544",
+          "wrongDigest": "67e73a5fbe676938732fa57b585676ca9b62906dffa6752f05194b8dbab84056"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "d65fc946f01c977fff0d2a7ae76fbb31696d8f98dc32570d207281cc493a5a32",
+          "wrongDigest": "8119c08b7971422f2827e97af5158ae661121c65bf0b8eee56a5809b65624e57"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "coin-change",
+      "sourceDigest": "5aa74ff5cc3fa4d78506923d3d8739a198e261ea5af8f95c591ec4a915f3d021",
+      "contentDigest": "562f3e4fd02350f2326e5889247177986f1408bbdcd07697d3244f0a8d230731",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "combination-sum",
+      "sourceDigest": "d893e599d09d49ce2f9528655c8ee81482c760da131c15636895c045a0866c0d",
+      "contentDigest": "9e934f69e6a913c30f019d584624159aedc4ab7e0783b99ba5e205adad61721e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "combination-sum-ii",
+      "sourceDigest": "51530d98f635ba3134754b035433922a560bd73d2d45a2a3982726be9593484f",
+      "contentDigest": "5b3fea49e2ab809211840885b4a3f84357db9f8d6775ecf03c15c6bed0287985",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "construct-binary-tree-from-preorder-inorder",
+      "sourceDigest": "47135bcea24be2f6ae31fa2e50b63e9e3984eaedf68e870a82efd613d4aa78b1",
+      "contentDigest": "6577cd96b3b2955cc3898864a1471d0da1868335d0761f04d82447e502026b50",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "container-with-most-water",
+      "sourceDigest": "781d091bfe2d746666bc252217196954f9fd82a43ed5e30f7cd2651f64b8f371",
+      "contentDigest": "6be2b4cda717f688606e835cdb053dc4dcae645ab8c94d429678ec9ed175a9cf",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "contains-duplicate",
+      "sourceDigest": "4a41f71adbe724fec69deee5d55e0297baeacedb5733c758feafe0544bd772fe",
+      "contentDigest": "0280289d6b6ac3d5f50522349f229b7cb0fa11881bbc28ef44f05ad32d5876d0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "193d32c07369bed663e326d84d3f486a9e5b499618b4bb13ce4dbcc5c368ecb4",
+          "wrongDigest": "e8814cb271a87abccb271296860cbedd9ec6131e6755220c1a493c03f3c6ff1f"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "9cd84a4e91e0d20ed30527038c3fc0d246bdbc2e9304592e501e4f093e4c9328",
+          "wrongDigest": "c1566b7b7e3bd26986d32459458e2ce1c713abfd4e380c5d036b36d83da32124"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "57482518c85c8d1516eb1af38c5c9a34bda1543f413d06cae64ed62500eea667",
+          "wrongDigest": "6aa912ed2e277b69164b16441e4acd9e5bb070ac43f417ff8903a2d0591b7cd0"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "80bf7b9c4b47377c8033a566f1beaa4780db2311f1c15d29d4df3643d88678a7",
+          "wrongDigest": "6443f7eed8e5001608779b567857d17bc7b1f7da6248be5ea0a66cbab12ece09"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "d0ae2b48bb057ece6e9f06cbe727cd283f07465000537a3ffe1d11baa843e1e8",
+          "wrongDigest": "c0aca38d4663bbb519c30c905a7e2887c30f3b45b85a0eb1e27f629c1ac7ca49"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "3881f50c374633526909bef16e7a3a83f0492bcf1b8e4e8a6ace0459ea5fecf2",
+          "wrongDigest": "4d04073aeed68de1ca4619ea20536c753771af8237aeb2155ad7e98ed47ff62d"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "contiguous-array",
+      "sourceDigest": "f8ac7f68ad813681d0cfc7df4531456f2bb94385b8cd6946f3e3a96cfef47754",
+      "contentDigest": "7b7423a22dbc97b2cab85c501276a43ca0fcddfbeda3ea27ef3060bc54823814",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "count-and-say",
+      "sourceDigest": "48665235ddf4070ab62e4fad89685d73a335417d48740b186599ce6d2dbff4b4",
+      "contentDigest": "e0e0878a652b13eb7fea7c98733bedb10ae9565662f8482a4455ef612ad71685",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "count-primes",
+      "sourceDigest": "eb4c632d6a67257bba5a7178acb571a09475dde0284aa8e44996d74c150dd3df",
+      "contentDigest": "e6786555d945cfbad7b4b93b5b841daa9e2fc19eb8ff156fcba981e45f30cd59",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "count-smaller-numbers-after-self",
+      "sourceDigest": "e45404142dd836c321ceb1088f8eb8b603eb33cace4aa5329172a33eeba599ca",
+      "contentDigest": "2f1990d61dc31b94d05550e4123fbacbafaf293db4fdfd1a400a3eb467030558",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "counting-bits",
+      "sourceDigest": "923ccf64b95823f0314eaa3ecabbd567821a659b2c16d19c6325d422a7df9d4c",
+      "contentDigest": "5ae0e1addea78955cdfe44cf9857abd6e0a06366796ef13089370ea999160078",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "course-schedule",
+      "sourceDigest": "18647074ed3149323615f2d80b8d47b30b78bc9ec6a096929471e8b939fa42be",
+      "contentDigest": "8aed9f986f9560b776083ed1d6595a0c9e1091211ce5475e1c20ffdfda5718d6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "course-schedule-ii",
+      "sourceDigest": "0f9512aa6ad2653fedce4dd72464c797b4b2ac3a4149063869ef5783d203105d",
+      "contentDigest": "c3163774cd06e7f28cb31f04255bdc90c02a6ed209c74cebb647eceb62bf23a0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "daily-temperatures",
+      "sourceDigest": "ae6f1a115454140b8802e40340bc0a110d82ab4b8aef6bf0929789e474b1468a",
+      "contentDigest": "818c4e14d309d76a97906f4c38a3abedbe54938c24bbba33f15c3bc6ebf5ee4f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "decode-string",
+      "sourceDigest": "058838d33d879c0ff8674e367ae537c54dc9d39684ae7aee38060ca3350f3d18",
+      "contentDigest": "d4bd83d4c4746a85d3844b69456fe7bf36e65f730400816c3e12a0088e855ba6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "decode-ways",
+      "sourceDigest": "a41a03396372c90803a97a0e6f7402bcd01f3b45441e9cbfb3159c24465f5a96",
+      "contentDigest": "399d23a1c83efe706bc939861833a6cdddfb71718fcd9bf75c5466623dc6b893",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "design-add-search-words",
+      "sourceDigest": "19a2df6b86cd3756805a033ed929d361c7188d3b74e1522ba5053a451f7482c8",
+      "contentDigest": "cd0f492079183fc744a81c35988033481bcc260699bbe8a37a4b2ae97589cc20",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "design-circular-queue",
+      "sourceDigest": "5ba66861ab4f52320fc1aa857369ae94a6b9eaee99b0a35c13b3f8718bd162b8",
+      "contentDigest": "46a98d46f82059faf3d420e489376febb2a3e80402f9e91691aca5ae14e882a3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "design-hashmap",
+      "sourceDigest": "59ca15c69d01d038a7801bf52094d56ab55c6ac0a5719315c70865e060cc509a",
+      "contentDigest": "9fa5ec1830f98f66ef88900f3410633e5dd19488b93af61f3adc50023c74998b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "design-twitter",
+      "sourceDigest": "90c57c6f8086a2419b306445e23b4a255e1eddb5b21b1b1ec9058d3d20797e67",
+      "contentDigest": "a97b1238adbae6ddb0d70198577eb3c9c452298bd39216cbdc1017b4f15b16b6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "diameter-of-binary-tree",
+      "sourceDigest": "bc00df16ac3f53971b32368ee40b7b41fcbe9465cace61dc032e0fe68b737fba",
+      "contentDigest": "13d2ec700fd96728009e1cc5121d55087ffdca72dabec8e0e93a9419a5c1f061",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "distinct-subsequences",
+      "sourceDigest": "f0ab4a92bec3bab3115f1e41d2ee99e1087b9fea03350908444a42352339e186",
+      "contentDigest": "d9a2ca8fde2c40f0f2384a30bc11b91eaa4976b42081745ba81e13da1af9694e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "dungeon-game",
+      "sourceDigest": "5c72ea898d3adaa74bbb5a9059fc67ca7a646ed4f5ee3578ea8fb3a128787f8c",
+      "contentDigest": "8427bf4717ff92b3bcafc997cb8bb567cb214b67ef09fd819c39cbcda8381d89",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "edit-distance",
+      "sourceDigest": "1f6aca671cf43f579406c9b130d7714b1a4ab6b313991aa7992f260a78107d83",
+      "contentDigest": "cecc600211ec9130d118a53c091fa0ae00d78ed6032f048538b0a6991e47d2de",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "encode-and-decode-strings",
+      "sourceDigest": "e6436e22e3c9303eb9ba2e140fba753a8cc932cd0c419028399f945324457c64",
+      "contentDigest": "4b1b28e0b641d80ef7196f5695270c2b289e657fd12fba5d07cd969e31905470",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "evaluate-reverse-polish-notation",
+      "sourceDigest": "0e6901fd478044c4e37697c38995044a03fece03c36b4834c4f55a829d092aa1",
+      "contentDigest": "244fc6b963da7383d8813a7df51db2e21acc2e8b2a62a880fc156d32f7ab49de",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "excel-sheet-column-number",
+      "sourceDigest": "177b3cd2818e250f150f8f9983bdc77923078c4beb7a3ea38a436c485288523f",
+      "contentDigest": "9fe1dfd04068e19e9e9deb8e2c461fd90eab4dc3b30c2824cc6bf1bad4ae87d0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "fibonacci-number",
+      "sourceDigest": "37454c2663594711fbf8546759b9faef36c8522c778b6316272c346bc14a1bbf",
+      "contentDigest": "5fa65b1eee8897dc7b77c143986ea25e8890ceaa2e59de2c90afac81b2ef2861",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-all-anagrams-in-string",
+      "sourceDigest": "2ea5249fdae27c944c154c2a034d24ce00c90b1ef1cbaa4c17857e397259f4c3",
+      "contentDigest": "7f0c72ddf8102546d23dd694c3ab447993dc394b444e8c06810d935438dc729d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-all-duplicates-in-array",
+      "sourceDigest": "e95e6170f18795de18b155edd0f3b3ee99aa009c76b709622cc94c346a62b874",
+      "contentDigest": "d52c80e61609d2d23e8bc09fa52e3a47484015492cc575e84d81cf104791d62d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-k-closest-elements",
+      "sourceDigest": "df400a3db156faac8ba73795ccee13a943f0cb3a9b57667a40fa2c340a649563",
+      "contentDigest": "23ec841895c23ec504477019db2bfe482b52ebb9237d4b519e1d2f06dba96694",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-k-pairs-with-smallest-sums",
+      "sourceDigest": "a547506d1c4d7e1861bfa41cb000c7a3345f1875b9498f329b17cff33a11fd08",
+      "contentDigest": "232c61f40e0902701a7f7e82ade027f48aac03d88ffd0f7a0cfe1afcaddb8e93",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-median-from-data-stream",
+      "sourceDigest": "a53cde1880021f969a3860c89f81f1372bd8b677c8440eedd72ee48a17e38df8",
+      "contentDigest": "bb391f9800c91c91d0a6cc59eeba8b69c9860692eb806375d8e8957686cd7d2b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-minimum-in-rotated-sorted-array",
+      "sourceDigest": "2bdc3edd35242c586ce5d0cfb42da7507dac4a59f176829cfb93951dfcbddd87",
+      "contentDigest": "fd9d78d6d4871475974745901180f5644cf7ec21b1bce2b785f92fd789b679b8",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-peak-element",
+      "sourceDigest": "7daa798b4773d7043bee374217926aa26625952775df487eb4f7a6e56f2aaabe",
+      "contentDigest": "ee61cbf52bc8915518a032fa26df027b89ceb01f6f6c35d1795e5de2673f59bb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-the-duplicate-number",
+      "sourceDigest": "e83476d2264f1db1b3e1347910ba4c58720fe5c581788ee9c22064d97acd2c83",
+      "contentDigest": "8a0c22bc7ba34eed83dc4f23cf013aa95332f18583ca160ec35a935adabdc043",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "find-the-town-judge",
+      "sourceDigest": "3fc435456b1ce4c98b4f49be788c7343005c2f1edc03663e3e49033d8138936b",
+      "contentDigest": "8d0d5c0259aefeb52bf3657eced4069725f03680d6d1ea6238ddcbdddd70a9bb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "first-bad-version",
+      "sourceDigest": "b002d25e727d0ee02795efcf0bd19a41bc32f0d3724ace615b652bcaffee38dc",
+      "contentDigest": "38eec82f90dcf308be9563a0cbf6bee5725b9f0937f67717ab71d7badeeef5ae",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "bf8d7a24562220febb7c820dcc33f5101a067b3034962ea708689a48782eb184",
+          "wrongDigest": "bfb7d08437bed3f41192f4ef6acda1985d68227346b1542001e05aa8eff3bb07"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "788ab998fdc36c880bdd9eefbd35e3080cf406201a4dfc381a02cfe9cc93e0c6",
+          "wrongDigest": "08816abf87b6ebd9f8ae7e68dd875842b72e19e0780a76563220a76fee5bbe4b"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "63d4cfe30aa7d2fa5d384aa2b0eb6a6b5d2f2360c8836bcd2dd7b25914d578c6",
+          "wrongDigest": "4fafa3c858a0abd9e5146ab1dc510e7d5e6734eae1a156265336c4536330d502"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "3d35595de688453f2eef171ec6ca14ae008a1ae8a4a56912327482f8a61dd567",
+          "wrongDigest": "2d868723330d8ab885833e0d21be2eea7f76c48b4b1d6f0e7c27f110eb8087cb"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "8e1c1dfae62ff7807e61be24b26bc24fce67c33efd633ccd31ff6ab0b5caae5a",
+          "wrongDigest": "9f4e4250589158c5b985f764f1615590b7b91002216f2c787caf93c9eccd89b3"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "0848d58b2ddb705101c96bdc542881c7a5b5d48fb875a23fca1ea05f605c59d0",
+          "wrongDigest": "0a727a6628822bb05b9a79534e0a950646330dff7f68bd0f320ee42bd02ba23f"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "flood-fill",
+      "sourceDigest": "27a44d8b30d1333b768f6c3e304dc40d83ccc3070461427f18b45b676ea900b3",
+      "contentDigest": "6f24f8e2fc7792a81d2a41b091642f9c0d7aea2be9cd67648314a88241628c37",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "four-sum",
+      "sourceDigest": "e3de93cbc7d8dbacd86f53940c9e4ccea3df097e1c67b94ce0fbd3928da2abde",
+      "contentDigest": "c35f10f779ddc5d0648ac25c27e38a74ab389ab5d6525b1e2a09297f8250094f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "fruit-into-baskets",
+      "sourceDigest": "612025e4f733c5ebdf8e8b8d481310fc728d3c30538770de82d4098d6936f8aa",
+      "contentDigest": "d64c540634fbc6bdee4285f2afccbca33300b4d10e444d81c449fcd1c818affe",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "game-of-life",
+      "sourceDigest": "ae60c6da517b3af4ed4c53bb01ca271a1a3f5f3f883328d45ad239049d0eafe0",
+      "contentDigest": "2491658c432eac44d99749e4ef25b00d0798efccf33f61bb940aa74ac84b0107",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "gas-station",
+      "sourceDigest": "eb39aef6372788fe6ae8c7df80355e0bcd9842e1df628139333ba593b9c44196",
+      "contentDigest": "6ff4f29d2cd58062cfc8d48efb10129a295e139eb6e10394723e79d9f7c6b25d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "generate-parentheses",
+      "sourceDigest": "52810d31c9b9706fa0f0c86f8f5ba3eb8bbd6dc3ea8ed17480c214fcbe645b5d",
+      "contentDigest": "0cac10027328fb24fc63474318ef1e62493c1de598959fa4b6605bf563b91a73",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "graph-valid-tree",
+      "sourceDigest": "932363d9ba27e00bb147d81cbc4f429c3a1ee7d7b860478b8a50799d2bc670f6",
+      "contentDigest": "79555d07b3d0cccde62c1784d974718a47fa160fd0743a48a319bbe41c54e19f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "group-anagrams",
+      "sourceDigest": "1b7debe1b06dcb34567f5961535120628f6a78f00aeeb76dd5cd5885050bbe32",
+      "contentDigest": "2fe21734463ec4d64cc4b753abde7a9760c6ef99582d44830196fb7a044c5079",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "hand-of-straights",
+      "sourceDigest": "85fd4a99ee2be8e74d595c9f503ff82e70f3181c609e859b81dffa2f85f50e1a",
+      "contentDigest": "207d852864fd69981588e28ef18e2eb8745af39a40f677b4c323ba2397ab2bd8",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "happy-number",
+      "sourceDigest": "8409baf3ce8930f863ba3ad608ea6b7b570bc69bb8e674847d55fd0e1a3b1099",
+      "contentDigest": "31df18bfc6ef54129881db71f1a29645f1560128526b6f4d19e828c145285898",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "house-robber",
+      "sourceDigest": "692083697a54a28d1b1ce04ef099c2572538b99b4e5b68da60e86b22e9f6d6a5",
+      "contentDigest": "f66a3a7e86562a63bc483ffa7c2bde5f994eb1e546599e97a3f423bed81692e2",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "house-robber-ii",
+      "sourceDigest": "404793fc0e977dd5fb8b491dadcf26cc4fc06a634996cb902bed6eb70ae89a82",
+      "contentDigest": "a506177036f77695f4860448b3e27398849f9db741f2f3ec87da2bccaba31f9f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "implement-queue-using-stacks",
+      "sourceDigest": "1a1581b54df3ee14a84d3ecfe25da081cf4627729c05b79269e9d402d4a18de2",
+      "contentDigest": "7682d09b6382183e50d166a47db289bfe8062de17cf6ddf3f4b05368b9e91494",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "implement-stack-using-queues",
+      "sourceDigest": "cc70c5149c4990a95750a9f99f931948212db6b82901654c99e8f9ef3737fb2c",
+      "contentDigest": "841dc4487f0a19f4dcc2891f6dd598bac7402b7337822b5397042ba1086d6dc7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "implement-trie",
+      "sourceDigest": "f09cc63ea51c30a6334636eb21edc523405159cb9570842beb24a6c803824d22",
+      "contentDigest": "466b77f3a5a26c78ef28575ceb815e9826c8039b8e9a96d1289f9c3552dac707",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "implement-trie-ii",
+      "sourceDigest": "eef9e23c45d079bf8bdc864c92fa4dc3e234a2d922314620d0ab086e74408343",
+      "contentDigest": "bbd6d688345311ba8b13f3b927c3b53aa1dceeecc4d15657bbe0488f7bca8576",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "insert-interval",
+      "sourceDigest": "82422afc72212f74254d07068e7811dc0f2542199791d5cfea6073e8e19d4ee9",
+      "contentDigest": "c77e048d1cffe10090b26a96399755ec772574493c5ba1ac0540adf0554c1ea3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "interleaving-string",
+      "sourceDigest": "ffd54597eda57e34104b2cd516107493993fff7b7cd6447594d29327a97076eb",
+      "contentDigest": "4b899ad3349b7d742080b5cb3d3ddbfb845823e51eac9229aa0e8a1334c526d6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "intersection-of-two-linked-lists",
+      "sourceDigest": "9508e099f8f97d94d7f1d6117b215b7d58119792d8162335340a4eafe9112c71",
+      "contentDigest": "b4c4630636bec88e04a7d1041a7f95ee2cc2701f5bafc4fc79d3a84f2fec975a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "interval-list-intersections",
+      "sourceDigest": "f29f48cb0304ab0a5797957ba719527cc7d9876b36aae4cbad201f27a0de7e4f",
+      "contentDigest": "794014b18e90bbf216b9512d92d9285f2c25cd426691094c7ecbcdf552a53744",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "invert-binary-tree",
+      "sourceDigest": "f05e44a772feda16586740891daa33855f70956ccf7d8d4a80b91bb26f88c3ea",
+      "contentDigest": "a4a0adcfae067fc6c6adbeffbb4cb6b216c231335cc488481ec380ab27c446e2",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "ipo",
+      "sourceDigest": "bf205fcbf1740154980cf524810564b946fefca10a8ee6231ee545f947b904c9",
+      "contentDigest": "815792aa93bd4fa6ad53c5229a189d135f49ee7d3c7a41bad43c2548d3139047",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "is-palindrome",
+      "sourceDigest": "db045b5ff736981276cb7164d55da3c31dd6683bf16f456ee83e1b3794c57082",
+      "contentDigest": "d1bb3dd8489a05d147284daab8760f549099c1aa88c00ba35cd098a1909919ae",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "isomorphic-strings",
+      "sourceDigest": "4d18769ae42de9a2aaaa450400e0160af7e14f29312fa1fd6eb3c8b69a3d51aa",
+      "contentDigest": "280e3758f416e028d8d2a592f0fba35dd7280390a7f02052805ec151ef362137",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "jump-game",
+      "sourceDigest": "d05533e9eb9c48c3b8719b9dc4e2d0ed321b15c9e5b5c9eb8a5a89f6ef6ee46e",
+      "contentDigest": "0d342167d6f5380e011f171cb7e5c3bcf395f1a356f99a896e50521ed3a8b1ce",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "jump-game-ii",
+      "sourceDigest": "899de36f3f5f1171f6280d4cb34f9fc938e8f10b888f4304cc9025a4bfbcddfa",
+      "contentDigest": "02d7ae0d460ef3100e8e0d449a018d2de663e76bae72d8ec6d8c803b102fc672",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "jump-game-vii",
+      "sourceDigest": "ef4c03b2a170384c0c15ac53e302a68a5fd9b5fd56ad48111d7941c89b8742fd",
+      "contentDigest": "cf4f8718fc954a3468ceaa1b04b55e2fe952ae000c59c91f3e82dbff2391a8c7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "k-closest-points-to-origin",
+      "sourceDigest": "7b4c67a6f29bcab44f85cded4b59ba6657a120cfb07c2c736a96be3463633da6",
+      "contentDigest": "78a36be301cb22ceb1be4a3e8d0c3db0868323ecce0201f68dc39e4fea45226c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "keys-and-rooms",
+      "sourceDigest": "551bf428db706efee4acb35b2ab070307eb43addb6d14f9840945bb08b95983b",
+      "contentDigest": "c8f940ac4f5aecfd6238d26342a3b1e12f8a01ccda56923262de7b3552dcd372",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "koko-eating-bananas",
+      "sourceDigest": "31d94c5e5e1a1d63accd98940b660dc8536676e587b4340741a9952fe532501f",
+      "contentDigest": "dc5398d933c309809d228ef501fe743a565e93d26cd5d24d83036ba75a77f8b0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "kth-largest-element",
+      "sourceDigest": "0f684f7c8fc1d0b37439f22b68a325ba7901a3c3bdb9b67bcdc13fe5f0eed974",
+      "contentDigest": "bc51915ef24936d720fad6498a6e101d11d0020b21ef0fad1225c165ea503487",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "kth-smallest-element-in-bst",
+      "sourceDigest": "a7d08952c99c65621ff506839172ab4e7229c2bf53809fd33e7faae1f9a2e14d",
+      "contentDigest": "94a9cc289ca53ce124874f0b08d113fd63e9cc14604af9496416149ea9906176",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "largest-number",
+      "sourceDigest": "a571d5559c929b457546dc8f5bcc327df428a76dffdb43f77fea72e7a92df9ae",
+      "contentDigest": "85165826b02734e5fc06c1ef78b51114c9b2f68934084920700be45c221bc776",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "largest-rectangle-in-histogram",
+      "sourceDigest": "8f2a2496ff3580aa8d52b3d2273dbe6defe4141288d56fa38e6a3386dcf40b36",
+      "contentDigest": "19c9e1574fb1bd636929fa9fdb3f0be6874b131ef2fdd5c4315ebd3ef574265a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "last-stone-weight",
+      "sourceDigest": "60c13bc33bca62d4a7997c0a8078e746d25568f3497ea43708c571ffc286db2e",
+      "contentDigest": "c662c32a6d014fd93ba1e56b20e79c06a0d6acd6bd0754a74912e974118109e9",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "letter-case-permutations",
+      "sourceDigest": "aff43078958076b51472a65615f4b7ffe36eed46bdffc6604e0932ba36ca38e9",
+      "contentDigest": "a9f9d5d1b0792b594e7064643a984af04230211dbf2dfd45f979fc49bf0da556",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "letter-combinations-phone-number",
+      "sourceDigest": "b222b2b7fd81a8a19421b49f227021f395c16fcada728b3e4f5e102deeb0cdfd",
+      "contentDigest": "668ad921e02030338441e878fc74802002b0dd02411279077c4421bc61476926",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "linked-list-cycle",
+      "sourceDigest": "5d47357db5419a6702d2834e281a98dd6b0f9563b5a6c434eb3a369007f5d292",
+      "contentDigest": "fa8ac415066a4ab25f6a30078900b7c2b985ef3fe5e00c2646e5aec9d8c058ca",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "ebed8b49eb62cfd81c9060d0a3095b7892c0c6c6412cdf777e2d30f61e234a91",
+          "wrongDigest": "d692abe1dc24dff5248bb03db70e908fcf05a053d454990bcb0f6df23bbe7d21"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "efa55a23cac5237ad25b15911058ffd633ae32d61d13a794e6a5835cb87cd25f",
+          "wrongDigest": "3048bf7a95751ffdfb2b46fdb06a72cbfe2924a9140c91a721f07f84274428a5"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "423ab2f7661da5f6530f882de5036bceeabeac75a1d3b1904cd13f5b9cb3bdf0",
+          "wrongDigest": "121a66a4057bc6770954d6cef998e9703a8e9636e67d7de9bab67eba01343d28"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "dc2688ff9e935eb227664ad856cd2e201731bf9f1b4be2bbd0d055e24e3de6e4",
+          "wrongDigest": "3a77f41531f407ad4a081532cf3140e10a44fb4ecf7b8dcbb216700291a31af1"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "c306b59e9bd9938fa81c575ebc6a1a5817bcc87036fb5c9dcb0af1677e9b0990",
+          "wrongDigest": "54886c20bcb422144dcab8d7e87f8461b3675a98bd15d2de6d39a2f5218c651f"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "f4b6ea4b5782b358abf304df7b927d26a116f49b24e1c26e2df4a5f0bd26d02b",
+          "wrongDigest": "ab3b43eb6be3fd0d90d678059044ddcdf922688a522d15f5e77891abc185dffd"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-common-prefix",
+      "sourceDigest": "1187788530649932dd7ead7763f7133fd8fc912dc8b894e00ca11e9c4865b929",
+      "contentDigest": "f94600413e1c6822137887e9e2180e076571ef2569208de49dc2147518e0112e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-common-subsequence",
+      "sourceDigest": "199b0bef2b28d7a1185529a2d2eb8c24196caf22c1a5b661701ec589037ec990",
+      "contentDigest": "edd0c90b9a55bcface9119f50522ceebd5d67e0216635b739c508ba1609659ba",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-consecutive-sequence",
+      "sourceDigest": "c9d917bd0e0deeeafdc7243d710d3f172e1d81753291133da35594f07a8410fa",
+      "contentDigest": "9124a2a8fc94264cdf79183d6458186e8d3758e2924e7a91743aa4771cb15e17",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-increasing-subsequence",
+      "sourceDigest": "6fa2c9ccda871a1990215762affdb8be3221743638e5d41c0aaa75f747345762",
+      "contentDigest": "3979d273635aff73685640cdd9644c186472c2cd1f5fa11da2a7fa55bef9d6e1",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-palindromic-substring",
+      "sourceDigest": "261d37920fa42ab42845a2b25223a7e857acf926b49f5dbfe157be60e7014388",
+      "contentDigest": "6ad1db7cafa9421c2923b15445d5120c826b49e125a64d6960d0a0263fecbf01",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-repeating-character-replacement",
+      "sourceDigest": "9beda1d5062a4982c3eae92f9711110cb2b92ad31514259eb1f5fe27ed292689",
+      "contentDigest": "497712064075d21cd68122b01115579a9e2e25143b011e0b3fd3f807e105fdf7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-substring-two-distinct",
+      "sourceDigest": "fa468758e7a02c8343368c395b62719359e8883a1f351e3e2f37f238bbbe1299",
+      "contentDigest": "90b0c41cdd89123dc7c5f3907c829cc991a7adfaa4ffaaaf48fc4788a2f4e158",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-substring-without-repeating-characters",
+      "sourceDigest": "84f9df146206e138b08c5175054c83428683bd622802fc4fae6c5f80493f31ab",
+      "contentDigest": "a53e0e2acea7d48be53e001cda942647ec9727bd6837688edf7c249705b4d35a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-turbulent-subarray",
+      "sourceDigest": "7cc4590cacd2389d2e107cfb8ae81fd94da15c520040dbc7529ba10634bdc041",
+      "contentDigest": "b0aa7835964b36dcbe2b4e11be8672ec573d1a63170d559e0166b73f998e3b54",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-valid-parentheses",
+      "sourceDigest": "08b11ebe0119ee8eb0eebb78f435bcae4c6d5fcf67e9c70e2c8742de8c7ee947",
+      "contentDigest": "ffd0635f5ae42fedd00386f03ad41a7545d9bcdaaa220b47410e7d55b0eaf687",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "longest-word-in-dictionary",
+      "sourceDigest": "ecc5cda711950a13fe9a035daa18199721b140730786126b48656e7f8bbe16d7",
+      "contentDigest": "78ea856dea61c20e64c6c891a4130ac1526f53818103dfb7f17d4c43dff03dbe",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "lowest-common-ancestor-of-bst",
+      "sourceDigest": "766b9204ffe8f181b420e67882b6e0805742ddbfe405a73bfc84ab1524b2e623",
+      "contentDigest": "41e686ab0e635c57da38f04a198a988649af9e2479623777da39cc0de0a27aa1",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "lru-cache",
+      "sourceDigest": "730c5911d6ff3b6aeabea561177b7694f05ed8edd6342c6c32922469b7686585",
+      "contentDigest": "bf087371ce7f05ba3b64aa2634db13d5c6250cdba92f2818dd0b5875f808009d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "majority-element",
+      "sourceDigest": "2121ab9b82421d803555524a0232e78f0286622d46cb42f68c2560d77e65dd30",
+      "contentDigest": "e3c9894e80c8c745c663ec0ecfef594d58836c5315b30760a72948015da7f355",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "map-sum-pairs",
+      "sourceDigest": "8fe2a769bdad8455b065327256f6e218f6b2de3e347ed0c98751ee41b6875d78",
+      "contentDigest": "12aba9d5aa7f4bf412614f8be4c9f5897cd9c27c81db663eb9560666c455024a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "max-consecutive-ones-iii",
+      "sourceDigest": "fea36463731266b447ba4dc55743a5218a5893f888d6f55820edf4209afb5563",
+      "contentDigest": "945931a34a8f50a4f91199ea9d1fda5df6dd1f7feaf6a759d9df439dbc81172e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximal-rectangle",
+      "sourceDigest": "7a12f5beae29d1507b1034f5b6cd344b3988933ddc390df546f3a634bd0cb77b",
+      "contentDigest": "a2208b17c18395c5609ec081fa8526ebf53affc10ca11ed51a4157e0ba39d9bf",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximal-square",
+      "sourceDigest": "75b9bbe613fb7a6efc941cd6b1959c00c1b4f26b026f74efd420b2fe34335c91",
+      "contentDigest": "262d55c1364abf37f096993708db3854f5df43b6b18fcfca3ce0abe894282167",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-average-subarray",
+      "sourceDigest": "7d0b8b6d961c9579bf65fcab0c29c936830c47763530fc21338026e57db0c881",
+      "contentDigest": "4966af8b8aa5cc47be2efe372941974bd8eb970628d23a06746e5a2ffdb49f10",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-depth-of-binary-tree",
+      "sourceDigest": "769d08054aea07f14b19ec65983f533fd2e482bbf10525d109f7b85748926648",
+      "contentDigest": "62eb4c61766f089614b16e59eafe72a24d4595688dad0d639d38ad7abf325212",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-frequency-stack",
+      "sourceDigest": "113228d543acf74f52219702a91bc8b25e2c9a9388bc38360dcb469f93345d3f",
+      "contentDigest": "57426e35342c9a94b17369e9b7c42e925886dc94d813fbf73813f8d49027ecc3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-product-subarray",
+      "sourceDigest": "4c7c2b5c8eb4f01a96c18b6666de8d04e299a5ccca99a4bcc05bc634eeb1731e",
+      "contentDigest": "776841978ec138e3495a42ebdaa6b47e4560abd1653320a21ee7d4d66b2bad5e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-subarray",
+      "sourceDigest": "a18694015bf743c4673c2e0b7210483ede854c063e88dce8275185f7622245e0",
+      "contentDigest": "3363e7974f4bbb36da87fbd639e442048ed0545c750a22571c116498879b4cd3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-width-of-binary-tree",
+      "sourceDigest": "b9546bfe3aa4ce4431897f305dd06c5d1ed7a9b507711d3e614cb7d05ce5c873",
+      "contentDigest": "b9a4c9caade495e7f3b9e89217845346ce7581633992ee510810f152c5e093b9",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-width-ramp",
+      "sourceDigest": "1b306b4846fd9870b5e8c19e3f0f80f78c74e248b82d7e7324f658ed6f65b61f",
+      "contentDigest": "d97584435c0c4cb886b294f10bb6960509b8461e1b371ea960bb0e6cd3acc110",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "maximum-xor-of-two-numbers",
+      "sourceDigest": "adc86fd6f8ab6ce70d1f49606223b48fae44e60a3906f93d2b3ea886a913f31f",
+      "contentDigest": "cdd3ba2a2380622965d24bad4787d6a0dd8b08c22c68df67e98cc8b29b0f0201",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "median-of-two-sorted-arrays",
+      "sourceDigest": "fb574e0b6231ad22b3456ec1cda6f326096d0f0dc8f47c07a86899a989cb761c",
+      "contentDigest": "62b7359188f8e5dc1255384fa1908bf01e56705bf099d8faaa64bb7444b38e9c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "meeting-rooms",
+      "sourceDigest": "5b30325b32b4028aa2dbe47d4e288ddc50820fc92e1ca518fff8c5e39355b072",
+      "contentDigest": "3ce8c35587d58047a5b91e0c4bc9966ca6b87935dfba3608f000bdbd10041639",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "merge-intervals",
+      "sourceDigest": "333c08bd1c1d09d99b3d395b9e6df29200eaa76af8c48a9a7376697f3bf7a59d",
+      "contentDigest": "18166ddbedfcd528c9cfe6addf5f91fe438158aee4686c13dbc0ec82f19d37a7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "merge-k-sorted-lists",
+      "sourceDigest": "a9f62ed581f73cdba34252f612ef831ec09d644bc2b70f1e4349ec55ddb5a3ce",
+      "contentDigest": "44a1a4480ee93cec372cf3945463b84cf4aeeb7f9f1dc385dad068c8f8536f3d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "merge-two-sorted-lists",
+      "sourceDigest": "8a4db82002ae6070a8144375a9fb030779b9c7a4226e21e9af6831d5cff05167",
+      "contentDigest": "19459dafe3cf8ecfb585a13e5b7cf26a1756ab6746067f9aba834a5d996686be",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "middle-of-the-linked-list",
+      "sourceDigest": "31689de36613fe8002343b473e53df4753ba009755ae7e7f43051c7aacc2cf23",
+      "contentDigest": "458c555e0061ad67adbba3b104ed8410c1e6c2f87ee8ac626e4559f704a12b26",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "min-cost-climbing-stairs",
+      "sourceDigest": "d28613439634041ea97b63e6ee38b029549270221f572ebe15f4f2f027ade659",
+      "contentDigest": "f7bf50ffd2a09b0e4ff96749af758f357f63a39bef5ba3746cab6b8546571e8c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "min-cost-to-connect-all-points",
+      "sourceDigest": "b95daf334b391f82a506e3a3404169a9bcc37e4bdf67d65492be1f7c4370783e",
+      "contentDigest": "b8a3106110bfb5db33053961e15f2250f5bd95c5e833ce337f9bbf6d210ca7fa",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "min-stack",
+      "sourceDigest": "8fa5a5500c8fd0f33b8c2d9f5d85ef69f91fd994a51eb260b36558970a2d556e",
+      "contentDigest": "0368043191017dd86ac56a5192dd64300408a27b73ea528a89687c0c3533d33b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "9125a6afcf9dd941e5b141034905c91be63123d5feccdee712859c4b714d525c",
+          "wrongDigest": "95fe0927d9faba8526ba47fd02db197ec14df65b685ee76d6fd9f1b37c4bd8fa"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "a0d06399bf77b2aa7c66866251d9f0d15817c276c3f515f5d4457006bc03fb72",
+          "wrongDigest": "f182f3fa152b8ddf212fbcc131a791846aced196dba53cb5dabbfa68240c98a4"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "de773a2e3f2f9b5e1773d75a59e61702250c0d186d6d61ca83c19438463cfcfb",
+          "wrongDigest": "396973495d8221bac407d46f62931960ffd0f4b290fcd59f11194cc06ec1f56c"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "ccc2fe986186d91a571f88c642670e9bfd2998b9acd7ae691e47d1c398191aff",
+          "wrongDigest": "6b401db71e188cdaeb020ada41e6c6750c3c57760942491fb3bd198265c81483"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "49e239df503b5ef711716b113128aa4d6a99e47aa303517091d1e378ab2ad92f",
+          "wrongDigest": "2edd02da5d6f1708efc2bc23ad8af68bf66c2dfb3d3c0c59042bcaa4cb432431"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "c41cb7243ba16a62497b4332c917d2ab4926e464d9004732111cc475a9e3ec19",
+          "wrongDigest": "58102dde000c739aca114f5ad783f6958bbf5eb3e8ebd754f7bde8bccbfbb8bd"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-arrows-burst-balloons",
+      "sourceDigest": "81052299f4dcaf42a2d26532db9bc4a3d187351b542e8c6328f18d2e3204d4b9",
+      "contentDigest": "81f62a51379396367a076b948165fdb01c3dec4b515d95bb806298ab4072410a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-cost-for-tickets",
+      "sourceDigest": "82fa92a17cb756788d46e150d80858d4669e5a1c820aa90585b0f844d611c323",
+      "contentDigest": "d99df2bcb3eb00b3f2ca2dd5e3d2262e673478f40b6520b81e61290c5688003c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-genetic-mutation",
+      "sourceDigest": "2acc7fec4efbd0932509557533db2b016874288ff77ad9a832d38b84a10c9fc7",
+      "contentDigest": "93ba5bedf7cbc48354c0748ceec64157046b86dbcc61b97275f31789f55630c0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-interval-to-include-each-query",
+      "sourceDigest": "9acfb2a54baf0cf431aae6e6638e3cd10f5a690e2ce6beb1096a0afa0fb38923",
+      "contentDigest": "86aba9666af5627b4cc55aa7e59f6bddcdaa2a11eea2ab36a371056b27e0d529",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-meeting-rooms",
+      "sourceDigest": "a3b2597e2cd12d49d9838c4cbd069c0b2051adb2229bb6301898188552d87afb",
+      "contentDigest": "96f7cc898d066500e46415748591120783803fe08a03cbc35b3abaf3b9ac3e7f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-path-sum",
+      "sourceDigest": "16d675a8a0b6345b5e622cec5339ae883b1aa63d14c8b861c709a97edea18c47",
+      "contentDigest": "99ffab324c91462e7e42295c04f475efd5817e75e8b6227909e8dd7347304d50",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-remove-valid-parentheses",
+      "sourceDigest": "58f07190b88dda1c09c17ab8be5b43c93d61f41dcce95b76974db347204af88f",
+      "contentDigest": "b305e81abe55b795d3e190c76a677fc4287be4752fce5aab54b1f3530a14f414",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-size-subarray-sum",
+      "sourceDigest": "42cfaac3f31155fc6e23e5fcd5cc26105c875a7336f312e4707da4eede62a744",
+      "contentDigest": "24d860ca41d8890e0f68ad3a7635de056fe5ed40a314d301c28f5a5c04ada569",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-stack",
+      "sourceDigest": "ea01ea221a3c49a5914fff12199b3d9cb3bd172ee5f8a69b940e9a0e748df1bb",
+      "contentDigest": "c102c43f8394b6c95587eda786506bcc8cd1ba3ed200cb6b2410898dfbf32d11",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "minimum-window-substring",
+      "sourceDigest": "57c11e2fd20c4487f8946589c8c15ace35817b93d135eaffe608bcb821e33c66",
+      "contentDigest": "da8ccfde933e70c57542288926556761d496016bcfa7a22fcca490b2d3330846",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "missing-number",
+      "sourceDigest": "93c34066ff1096ff033866ac031ad226582dd564e5b024581b78a0be24b66778",
+      "contentDigest": "90efe75003a3b1e3f2641034ca8e16a0cb4a869f2155cd071c044721c91b02d7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "move-zeroes",
+      "sourceDigest": "66aaf517f47b3af389ed9a3b354502c2e8182e9bf68b109c231605939be643f9",
+      "contentDigest": "e96a0fcc3edffe5a5180f0a397e3cf3ea6d9b108bd42d1c2daf77c2d72028155",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "my-calendar-ii",
+      "sourceDigest": "5f2a34c3a713191a1c08eae85d9e161517a2c7b86bad6fddcd0923ec448c2ad6",
+      "contentDigest": "7205c09324bfc9968680b09979cd7a5265485c5467cb76a6f3dcebe51f582721",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "n-queens",
+      "sourceDigest": "05200af80ed168ce4564c55d49ced7e211291867c8e9db4add17c36902b0abbd",
+      "contentDigest": "fc6ea288f6190ee4cda2178bd18167ae803f18efdb0baea9652433960130404d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "n-queens-ii",
+      "sourceDigest": "bfb70a60fe76c3bc04c5072595f048d05868cac1761216a05ca21bb5298063aa",
+      "contentDigest": "3dc1f35fcf694949f96229cd5941906ef12f5c6b464e0d32eb45f0d833bbbbae",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "network-delay-time",
+      "sourceDigest": "7baf634de98dd54bb8d492479cc361c1010f786aef6220c194e1d21c64b29d97",
+      "contentDigest": "9e9a0b65446fe5e4ab2a987d0823bb35f2686c1a008980d5bbf58ce936a5980f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "next-greater-element-i",
+      "sourceDigest": "579ab8ae02d1fac4ca62afa150b4a26175fb67503b1b9b30cf808739d569729c",
+      "contentDigest": "e78a5574bd84158c94875cef41e1ea368eae4c86a2be98142ca7c1d41289ce6c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "next-greater-element-ii",
+      "sourceDigest": "bb7509fd0bf5bde00f1e2bbc165056fad95b8673de59dedf7f5f81bc0139d551",
+      "contentDigest": "72f03c227785f6bde5973f235dd24c44774feeb4c718840c15abcfc529996bc8",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "next-permutation",
+      "sourceDigest": "114e91d466e1c4e6175e76c7c46aa9b1042904625beeaadd82c3701dc2eb20c8",
+      "contentDigest": "3f77d5e09b89d5a82321821cdf48f9a142fedc2047894699c7e742486d5bfab4",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "non-overlapping-intervals",
+      "sourceDigest": "9131d82de5ec41bd4fc8e83d6b9f83a1fa90bc5d7b53fefac2579ab1489f4b29",
+      "contentDigest": "1c8139374f12e3ef878efcec7387ae2f8e48eb603eca63f80b8a08b9ccc72222",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "number-of-1-bits",
+      "sourceDigest": "2552a95c320d2a8b94f6784a72a91cbb25cb67f2a73e5c37484c3889e60dfeed",
+      "contentDigest": "58231ab5105a3e47dcd8c638cf524fe27109f042205ea1b85c56ff7ce7526e00",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "number-of-connected-components",
+      "sourceDigest": "9e98ddaf00afe31d15229bffb4d37e6c920a8e50239e5228be3629d2b8b7469a",
+      "contentDigest": "66a4a8c94cda5bcef37a54e17ea3e179453167fee9b1a7096ac8bdd633f8339d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "number-of-islands",
+      "sourceDigest": "d797842e9495547fc4df74d489048fdf3d35cd43f7b3b55a97a1b93edc0d5551",
+      "contentDigest": "fd1507557ca1fd461a4170d9df7e36d979d8dfa24d5e5964eadc44de364b8af4",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "number-of-lis",
+      "sourceDigest": "bc1b9dd3abe917a4de1ad14b3c61791ab5e7e64090b2fcbe75efd28967257aaf",
+      "contentDigest": "035a7717f5f71105e80354cd70db8a1cc7363bb2564db1cc79ba5c962be5781d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "number-of-ways-k-steps",
+      "sourceDigest": "ac98664e375c6d45b530918a6d71c9b0fe9a92c764988aced03869cbd1d33781",
+      "contentDigest": "67c62844d679662f14ac6d97092f9b7ba857edc3afa114daad743d2afe11054d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "online-stock-span",
+      "sourceDigest": "2230ec809e41194f9d71e985c100125ed2630e92d36382e7f2644f2cb4e5cd61",
+      "contentDigest": "b8f9ff71dc117d5cb997810322aace18642636fe170e1e1e6bcc6f61673ce9eb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "optimize-water-distribution",
+      "sourceDigest": "273210a9bf242925457c662c65d6e5536d9b93fdc6329f7aed94b545d530fde7",
+      "contentDigest": "ced0aa9de019c51066685b5277eae1f77e22d89cb6b9755a9a6d95de34136e51",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "pacific-atlantic-water-flow",
+      "sourceDigest": "5c50587d3fcfbe04c499edc4f1390e2fc8aa10e3c4379d1b99ca7774169f0271",
+      "contentDigest": "7d7c39b951950e36797bf8ff22d6cd3f4d251d1a59ba68ec5b5a529c8591d7a3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "palindrome-linked-list",
+      "sourceDigest": "e5233bdae170a19177ebb10ec4f014cd44f80738e0a3313d9ac093b56cd6deab",
+      "contentDigest": "bf0a324f840be84dc2c059d5b6713271b8c1a70614c6749a7345da49ab46927f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "palindrome-number",
+      "sourceDigest": "47894d2bcf8eb279d7de17d0bf2e462a0f5ee445650ad16fbea2ba98d6e116ab",
+      "contentDigest": "befb89b14152075b4cefdb2f5fc36745c3350ea358657fdcfaca49676407596f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "palindrome-partitioning",
+      "sourceDigest": "463459fe63a5bf25fe1c48ff6428386659872d5bec8737d5d3e031275c98bcdc",
+      "contentDigest": "efe565dec64eafcc74edf3b6a39d2d3a6131fd83401aeba9f7759dcbcf2135b5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "palindromic-substrings",
+      "sourceDigest": "f15dd4a1a2f4722aac011765a0463442a04b87b47d4b5c13db9e0dd05d74da88",
+      "contentDigest": "91e6ffa1fcbbd0a0210be204dae8c0d0fd971beef8138a472fb688a9705c6760",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "partition-equal-subset-sum",
+      "sourceDigest": "6906068e1fbbba88f00eb4c76e63558023b961cb029ffa2e8c948de1ade8e0fb",
+      "contentDigest": "a17d665e57aebaeaf460bf0a84d6e6a2199fe97a626b39ab4d408408dd4acea9",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "partition-labels",
+      "sourceDigest": "2ac67ace9b78fd6ca70673e5b036ad219a302e3590908487c3f6335c68218074",
+      "contentDigest": "ab9c7e9ed4b332241a4429cc13ca8d4fc30f5d589a0ed37643fe575ecd296a8a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "path-sum-ii",
+      "sourceDigest": "c7af04b3c2dd930dadfa8b51260bdaf4b7fded05ed45444cc70862a0e2b07399",
+      "contentDigest": "30f82e550450ee278790d2908658e88c6619935fc7713adfe34456269cefbc9c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "path-with-minimum-effort",
+      "sourceDigest": "9a0eeedaba1b40db4d99d436ed38ad948d7133812155d4273afd78af77bc919e",
+      "contentDigest": "fadab58f4a24ae4e270191f414416ac1ad5a45383111777374c6f0f67ecbd46a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "peak-index-mountain-array",
+      "sourceDigest": "a337630011d9adcd4792528620b8f222930a7b5913c494dfb2f13d7ccd092aa3",
+      "contentDigest": "eadeb54592a8b01af00a96a934026ce28c32437a64519239b8e3c1ac6cbeb1dc",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "perfect-squares",
+      "sourceDigest": "37507d880f803432b387a9b6e7e8d4aff9c1300a71b999c868a9b814ba1ae7ca",
+      "contentDigest": "c1369094c51fd4d27dea400ea212edd0f2fb09cb97bea582737ad1b85248b8b5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "permutation-in-string",
+      "sourceDigest": "32366de993d760a38d270b4b7b8bd7c44783cce0850abea89da8f6bc5175bd13",
+      "contentDigest": "85d30c0583abc97be8d7a0edfe41c404bf30ec92b6537a236ee3754d1b199302",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "permutations",
+      "sourceDigest": "d340e7d388d50d47e2b623bdd59854f48932cb009b9e01d51103c35d3b8089b4",
+      "contentDigest": "887dea5ecfdf1e3867d7c6a3321cd7abcbcb21d18793d89635ea8c6d00a99cce",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "permutations-ii",
+      "sourceDigest": "c6c9d70005dee85210bf56a8d04abcd9c7cde8093bf1e2cfca6d596c79540134",
+      "contentDigest": "bad2a106eb467aba2ba5be664a0d54200470eae91fc6e464772ee96c1fcad4bd",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "pow-x-n",
+      "sourceDigest": "f1d1b364655750a8b20c2b39621e6600b0c2cb153c8e030bb4c29f46061f2272",
+      "contentDigest": "f90444e88071b2b628126a0c0a6486b0981195f3c3258b01b58c22919803221d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "power-of-two",
+      "sourceDigest": "bfa78491d14d88fd991cf72bbb161b5e2a5a563a784fc4b52415a7315ef0a854",
+      "contentDigest": "81c19f46a9b1eae0d440382f1e4bcd53af8eb81acfaef67666364bdc54c61f3e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "product-of-array-except-self",
+      "sourceDigest": "97224f30f888538cc442a580cc6c68a398bea89459a74b6af4e0dd09d4d823ce",
+      "contentDigest": "c16674cf636105d4173e8c712bc2439fefc26c619ce1841eab196b52e11b5010",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "queue-reconstruction-by-height",
+      "sourceDigest": "12e35f65d33b15167312af608c76d46e515367c9bfc035f4d720877bb6fd826d",
+      "contentDigest": "edf1b5b3741bbf4ea6dcdf09b73bda25786b4a7e1d0353013b74c3d3d940ab38",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "random-pick-with-weight",
+      "sourceDigest": "2961c3aa10dd6817e6009ae80dcceed34171d6ff3b19057953b877ed80cf0635",
+      "contentDigest": "c300e3561401ab773e180258b769fdce29a580a448c7fc70976c3f1845ed495e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "69a5c36e57a2a166f0c36a5cebd546c2a1731e9f11d77761c603d6efcddfc963",
+          "wrongDigest": "c799702255cacbe3b1fe8aea6472434749097a10be0b8135cf20d1384267c49d"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "a652c3903598bf985d2acdef392ea99e5e22b1132ca744d9449adad7a36160bf",
+          "wrongDigest": "83a2a7ef826303c8fdfbe017a423872494387ed162afc40d0709af713563a28f"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "6b78002f75abce8953a0a2cb76f205b4bb2d3aa363e31245dabf701ba0a2cb4c",
+          "wrongDigest": "42f6645bde2e3a64145344e0ddba6f4ac6a4a5709b0448beaf59df3e0b3fb636"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "ba4acabf5f6b3d709a4d18c07f5544c3f2aa0239d5f086bc45b20b351e9876c3",
+          "wrongDigest": "c4bbf093f383f591cc1d3a20219d3c2d647ef71c1471340a5e7d4a7e9565a478"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "e36b6ea0e109a2fec9c84aed4f5bffb0ee129bc76cab30ac8be02c14b4481478",
+          "wrongDigest": "8fde90513ac1e32028e6610893312cb75a26fe5e9ea9a01acdd194a98ed1e4fa"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "ed6da2e2ffad66a427ecd60ee55d82743c6d429be6b00d9acaecb9dee5de0129",
+          "wrongDigest": "a2c57174c3411f329404460e97fe325cca6daf99b5d0c95f360ee23ff96b2280"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "ransom-note",
+      "sourceDigest": "bf29c4be4b11818bb2a9c96ba16b0b848a2c1c515f22b434ef9d340e714fb33e",
+      "contentDigest": "949d0f12c2f1496ba7e5ad8a58e40678a58c7d4af0841af764841719bfcd722d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "redundant-connection",
+      "sourceDigest": "058f759517e02cb502eb1ba8ba131e383f2d707bad0af1a77fe62d2d78ec8119",
+      "contentDigest": "f0f5b18a19744f52ee910bf7c536c3c463ab24ab14a3bb12a85461851a21ec1c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "regular-expression-matching",
+      "sourceDigest": "8b1fc5343563621830a6fbf59b6eadb5c38b3d9ff37b57a533e34b149dd7eccd",
+      "contentDigest": "d7f3deecd0e471e23e1a831dc2192f33a5905f52b701418cc92898a170f18193",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "remove-duplicates-sorted-array-ii",
+      "sourceDigest": "a9f715a93a985265067f2dd27cf6966666885de8032ae5b286541becd8eea47d",
+      "contentDigest": "38d6315e87f719a65f8a6c5581e7e2c46dcebd12c6e475fcefa11b8de8ed410e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "remove-k-digits",
+      "sourceDigest": "d0d01edf2a1bcd9cab52cb9209b798c5564cdc30499741df495027912a3261e2",
+      "contentDigest": "28cc6798466ce8bcbd9fbe0540a6f31ec229fd9f414dce5cd8cb5239b8fae809",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "remove-nth-node-from-end",
+      "sourceDigest": "02dbc400dd7434075e887448a7cb3db5848e2af2351deb82cbf02927d15bb9a5",
+      "contentDigest": "a097c5622304259551ac8a0a6921d8f45b089740974398ceedc4cd9920e3dc29",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reorder-list",
+      "sourceDigest": "7121ed1a630c0be44cc0dfd06f6ba95a65f67f11926f25fb17e5075e993dac7d",
+      "contentDigest": "f8cbee2009a18df21a8549adc805bd5ab328825253a0b04ae53d315c5c8cb89d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reorganize-string",
+      "sourceDigest": "800e2eb1f2768cef22d3f0e1f03e3c36f76adb57687879bf023c805197e4b0f3",
+      "contentDigest": "a681d5bd8c194eddecd6e447e8dd6fbcb89862e603aaa43e4815b441a65e7ca3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "replace-words",
+      "sourceDigest": "ac8693f4d36a658b4251a9aada8d0582c1ad5a4a7c51a8a4350ad52df27c6b70",
+      "contentDigest": "78bcebf8ed3e1a919064d1a3f21e0d5b4d5882543c4da0deb3aff2009cba0039",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reverse-bits",
+      "sourceDigest": "e48220f88630518ec09c88de162486b42252088f829f9e8e5b6f2a18e8bb509e",
+      "contentDigest": "66cc35885bd6451ea67f24c652f61fa57f6070952e8c539593b52b269d0afe49",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reverse-integer",
+      "sourceDigest": "c7030b2d461fa12665de84848bc10400805213c4bffecf55b2348a5a25cbcb43",
+      "contentDigest": "d7ead6abba5eab672b964f46aa73b3cd4af26da973f62f7f4e195c28f8b80757",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reverse-linked-list",
+      "sourceDigest": "507dae9678259e23de610a8d919999af0361e7e3d461aea6ac00e8046f2cf186",
+      "contentDigest": "00b790404ea5866e52f6cab945ddc24cd30c9737f3b1ec1bb9b5a5f4802ce01c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reverse-nodes-in-k-group",
+      "sourceDigest": "192ac6fedd28ea16d31a0086de5aa86f3d9f6903c0209ccf4a35748e20460e7f",
+      "contentDigest": "23c499774d3d50a6b4d2ef74d1a7147810f658362a32b7aafc91c61f6cb665db",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "reverse-string",
+      "sourceDigest": "8e5638d0aa40a8c19e91d791a364b1d9f2042c32604443ab2ef3d915048d37e4",
+      "contentDigest": "01efc87eb214f86a3cab277b9573077031de33a73455b51efc409068da8a53a3",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "roman-to-integer",
+      "sourceDigest": "7db223545422b39f82471a10466e1e00a52d70bbecbd3131302f4ffb75864356",
+      "contentDigest": "2f9de4499a871aa288a9dc09092477027950e1c07b6144c1c38f92199a360fc5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "rotate-array",
+      "sourceDigest": "63400483c2f1abf186cf28918c69981f5b79aa741e8c5460aeb50a093a44503b",
+      "contentDigest": "9d80cf8ec7e8f446ceb5019932c5117aea61f8c56fb9d129bcf615cc6dcb8f63",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "rotate-image",
+      "sourceDigest": "f6c4c106fa983da24750f93ae9c3781a067029486b17d131f9629451b9c7225f",
+      "contentDigest": "417b6de024419510084127a0545e3692f72f17f2cd916b79f51ce7c26dd9cd6f",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "rotting-oranges",
+      "sourceDigest": "22ba679f9f212ad9340ac4d32922f15fe5501565cb54a4a9699cc60b4e410227",
+      "contentDigest": "0defde3772fa8ab6b27295fe67acbdfedbb8d2c7b03324a855c21c5b8fc3865a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "same-tree",
+      "sourceDigest": "d8d450acc9cbc784cf34eda8d12828d168bea1583dc0107c15b1f394157e725f",
+      "contentDigest": "a0f4ad950f90490b5664b1e8cb806b82ce9de7ba46c7be18b28c2982448acb35",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "search-a-2d-matrix",
+      "sourceDigest": "868dc29df4e18401c7fd0fa72ec6c86a5cbb17a258eab59e85c0cdc22820439e",
+      "contentDigest": "489f60572eb309236725cf1e97795da6fdbc01248141b6cadb936ace55b2d236",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "search-in-rotated-sorted-array",
+      "sourceDigest": "cc091fc69c485f5bd34476b5690e10463de4ce053768ce7abaf1962c41dba5f8",
+      "contentDigest": "a4667bbea23984c615eaa00f63919dd9900f595bb09a331aad61f9bcc8b895c8",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "search-in-rotated-sorted-array-ii",
+      "sourceDigest": "7906d32da603d5c9963d41c6cdc087fa9b7fdb9deab4c4f0e9de70f8ae8d3b14",
+      "contentDigest": "2b4afb17782f85e0c78bff2c12c83ad03ab752422616f759572a5d8a1e08cefd",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "serialize-deserialize-binary-tree",
+      "sourceDigest": "45bd201fce4ae174fdce5d0779fc05993e03301b6ab4de042a6b189cc94ad90a",
+      "contentDigest": "69eaa3c579c3e25502199a3482b0f70e4884868a6b6f872b88acac8718a7dde5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "set-matrix-zeroes",
+      "sourceDigest": "d7b31d58705e4c89573387bbf388aabfc15d81d16b1e7af11e641cdcfabe3662",
+      "contentDigest": "3c79f9cc6fad1f805b10e0dd5942128e42aba3bf57a1c906bed473ef34560283",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "shortest-bridge",
+      "sourceDigest": "0c606b6789b1c5818c6adf480f9ba946f990e805185a8391478c2eb834890314",
+      "contentDigest": "98e461afef398c9a1ad9fe4dba89953c6c93ac164890a3b29775ee104308d7b2",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "single-number",
+      "sourceDigest": "9b1e34e69a4de381b8001484941a10466fbde6bf8d47ebfd38c1aca39aa410c4",
+      "contentDigest": "262a9594c3761222b53734c9c6bcd3ceec6dc975c9c30808edff64a7a03ac77a",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "single-number-ii",
+      "sourceDigest": "0047f8daa26b75d2685e3a47bcfd30008c30f521f0d87efcf561d1cbb1c54770",
+      "contentDigest": "50cd1491a8c069466b25e200b25e9c6228055899a047dd423c03d57edf1d0af8",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "single-number-iii",
+      "sourceDigest": "821ad3f8b7487c1e78552fdbe63011e26359d150444e92044557dcb567f079d2",
+      "contentDigest": "cab76b1d229adda5d080a56673d79eff91a95c47ca7149972cb4a9e0563ccfc1",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "single-thread-cpu",
+      "sourceDigest": "59fa3e814a0e9d09ff4d23c17a9e1d87ebd96dbd239f9244cc57e223e621e19b",
+      "contentDigest": "1817d71b4285f86a61a0b3c8a456346bfd72c96c0ce97b31d74892f10169bf30",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "sliding-window-maximum",
+      "sourceDigest": "3640eefe356d8143b8e0e94aefc1d7808b8445fd1e58c0bdcafaab80b9f19c01",
+      "contentDigest": "f5c4669274f14cd7c020581a375871e495412531db42ffa0184f25035ed9df98",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "sort-colors",
+      "sourceDigest": "1af02cfde98f3533f98f5abb99c7e6af4402a07bbb579db4f9e536024e5e1d85",
+      "contentDigest": "84ff3f96f491269ed6df895a5efa61f7ea3b118f0d88dcc55878fe790522687b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "576dfc0f12da68daf760434e956540c574d5b99cfdcc2bb6c14d84437da7d9e5",
+          "wrongDigest": "3a25acfcd24a2323d2755b208c447e7e117052b2c877efe739b31fe32bbfa667"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "4ac8e77ae4909fed43649ff2888d63127f232bf306dd1631d137184534c34b97",
+          "wrongDigest": "6f1a989186f9cd7807a32ffbdafa261a871976e27b8d47875aeac86623a713e6"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "e4daf27b8735c7cb24e48f4a99952831c7bb8ce03a6977c78620adbb0275bf49",
+          "wrongDigest": "63fac5e1e331dbf3f2b373475b24686047a692fb6ff5e4f7ae977771d5f3bfb9"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "42946122ca061fa7aa2418ab5fd39880d663ae37cd2b55233cff071d3e4b105d",
+          "wrongDigest": "e29cec96e4ea9bcef48e9fc2c62818aa0ec20047fd107c05b1e72b0b76c9943f"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "6784f025ba222e325edb3d9b0c9ffa91cdc85b640e70ce63d9a2a90f90a23f86",
+          "wrongDigest": "38c9ddca1391a025356fa7e0dd8e824150f77dde181aeb982897bf0a5c5e2ded"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "d59765dc6a414caf12a77830671d27282aac04d79e007e25c5e89664b8131302",
+          "wrongDigest": "558621839a1f43ae7bee96f0d19582fc183335c6d85e02b27ae54ad72b3fd0a9"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "spiral-matrix",
+      "sourceDigest": "d1c39714b71a02d20ea944b7471bbe3858355f4dce3cce078c00a59fedcebb3f",
+      "contentDigest": "584e35d772717a2b64b66eae00da101e558016dbc0226f26069c66e1147decbc",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "sqrt-x",
+      "sourceDigest": "3366a7ca911285103ee7d1a74fa10fb728514c2983d025f300f6d23b3aa656f9",
+      "contentDigest": "c506a4c38394c95c1d2cda3c769a7f242756b783abcefab25fe3483b2d790e66",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "squares-of-sorted-array",
+      "sourceDigest": "e421a5c74f7f2d4bcbb646826f8972aa87dd7c2b1ae92bd162ece45bae7f18c5",
+      "contentDigest": "deacbd736e4c3e1a0f76fb90d151654a633c02c4fabe8e13aa71d522c2d7d7f2",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "stone-game",
+      "sourceDigest": "2464b23a7bc5dcb01d4a0358db5dea410d0d9e1bfbfd5c30cc4f25f7be51ce51",
+      "contentDigest": "980be80aa547fc91acb01153cce98d3abfedf6bb20c4df105aa1e674e1b51fd0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "string-to-integer-atoi",
+      "sourceDigest": "9feb0997156075e3cecb2f62296062c01ecd4ea424b5f16d9a3074b5ad547240",
+      "contentDigest": "4eb224357bfd92a3d758cc324b98ef454d5ccc35c9c0ae019021d6d696a46ddb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "subarray-product-less-than-k",
+      "sourceDigest": "865571e5248b8e1f08e3adf1501d6b4d5a7791a5dd39fb5a9161fd9b653154c4",
+      "contentDigest": "b0225868034356c2884a6a996c020ec26c476cd46be4617822fbf822f23fcfeb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "subarray-sum-equals-k",
+      "sourceDigest": "ec158392bcd2435c3698695873d7d6e1eb9da7f4ec00a5f4e01de1d916267c23",
+      "contentDigest": "9d6b62a26b1386b0909b15dff221f65844fdd03c518d0c9da4537eaf4b6c5fb0",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "subsets",
+      "sourceDigest": "e87ca230a1cde09868242d0b91b461266a2a518f4516e23977ac92eb7c8dd333",
+      "contentDigest": "884ec578b51da822b9c2d8ce56666b27785c5ecdcfabd9555e8c80494797e567",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "subsets-ii",
+      "sourceDigest": "1a6ea3f48706777f679270b85d2a90156e4f4c790ae10b8220f1af7b8f8b9442",
+      "contentDigest": "fac6af548803e9c51e11f4e5d0695e6b736bdbc76fa02abe529d80180f13935d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "sudoku-solver",
+      "sourceDigest": "36a9a847f3c1e7b18fd178342edc6f2c37ee0e857e08f625a9b79621323eb735",
+      "contentDigest": "aa813e3164f94b9415bc275cdf57c5bd2c5169a9f710e8ea4384959e0de05569",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "sum-of-two-integers",
+      "sourceDigest": "3ad8be0b7b9253a9394ae152b2e314ecc369091d634a081ecddcaa110b7389fb",
+      "contentDigest": "938f3f81404bc1a89e9a3b896b39b30a86062909b0274ae519df671163dddaae",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "swim-in-rising-water",
+      "sourceDigest": "e40c5986e748c5b1ea252748abb0835d41fb5c0cc86bc34784b8ff3ef31d212b",
+      "contentDigest": "9f1187129982b1de44088e73e1fc01f3cc672f98b356d7273c7ba27f1270ddd5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "task-scheduler",
+      "sourceDigest": "c99d1387e95a9f0bff801fe98abeb27876ab7ce052aea9c314f282ec3db0ea9f",
+      "contentDigest": "cc9f3794829c40faf7784b6ecb8199b7c7bc7af721a39741de4a787872083263",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "three-sum",
+      "sourceDigest": "05b440dc68be46471aed751d92b38be977998df4ac783520aa220995c4b1f831",
+      "contentDigest": "bd11a73c0724b2bbba593ac2e226d5706ded585756183a7a3f50cfada0888655",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "time-based-key-value-store",
+      "sourceDigest": "c8199a4485809d98702ece311cafcc02bc11ac4dcb375ae6c4b2b758971eb70a",
+      "contentDigest": "03177ab6042d7325d8c3ec6a76601a2b8e0e78d3d4b16aecbc96052812a80ef6",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "top-k-frequent-elements",
+      "sourceDigest": "4d89ffc45990b5d9495d629da44d538a5b26cd2d384a57e06b8f6c02095c231f",
+      "contentDigest": "06365fcd183e8c59ebe3c72b2b86e1440cc7cbae1ce9dc15bb93e6f78acafaef",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "top-k-frequent-words",
+      "sourceDigest": "d33fc0b5e00b4b808923d1c6172f96de6c518c60316ffd20d71c5304f01f7377",
+      "contentDigest": "3b933c1a61fcea5587790c04434c2e97eb2a085a0255046d210452ecaff7b0d5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "total-hamming-distance",
+      "sourceDigest": "b52d99083707c63cb1baf1e38bfa63c403f473776ac01aebc889ffb1acd79329",
+      "contentDigest": "376efd940cef3f4718630cfc413c5f057a3f47860ed9b8ca1d73b56b8e64d731",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "trapping-rain-water",
+      "sourceDigest": "2543c65141236cdd4612b849dfc5319251318ffde3278788e22b39d26d0a7f8e",
+      "contentDigest": "1053bbfe57540f7ecf8af4eb339956cfe15c8185a0e8c311026cf8a5c51f2d3b",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "trapping-rain-water-ii",
+      "sourceDigest": "38428d1ddaaa65dfe8520d07aed45549be4da32d533410f40c7b7d136334d977",
+      "contentDigest": "097722b8bba084fdeef168810abfd5dea5cb4e55868d42cd03bc72a5faf8ab70",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "triangle",
+      "sourceDigest": "2756d1edbeeb736941b35307873af08f412f3dcd4fab42a829edf7aa2ffad4bf",
+      "contentDigest": "c20236abd86b506ab552aff8035b4d8a09b446ce63f75df18359f5b4e4fbff3d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "two-sum",
+      "sourceDigest": "281bfbc4a6c2e78523d705bd8916915ac1de3774716e486d6b1dc092a3c91101",
+      "contentDigest": "4ab460d73df182116fe61a652e8ea4147e2cfb898bd10dc98cf16b4250e432e7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "fixtureDigests": [
+        {
+          "language": "javascript",
+          "acceptedDigest": "ab4ca0f00da5db5906e4a82d8cc3764541598214f3c47cada570255106ddf01d",
+          "wrongDigest": "5972fb0ca777196b0ad058076dc56c7e7dd1bdc3c13c58a38da12dffe18dbec7"
+        },
+        {
+          "language": "typescript",
+          "acceptedDigest": "16c797667ad27d32849578bb16157dde4fc8e50ac8d0fb03edc54a60dfceeb8a",
+          "wrongDigest": "dedaadd4eb1b7214923b7cc61645be6d4cac16fba2be17a68f5563178977153d"
+        },
+        {
+          "language": "python",
+          "acceptedDigest": "1200aab1646292aa146ec986f3322fec9a449be887c09fa7b306a462c3c8f032",
+          "wrongDigest": "abd52c0a35ce8a7a243d5328e69564da74b40c1a737c6a4ce27037a07d91101c"
+        },
+        {
+          "language": "java",
+          "acceptedDigest": "43b422085e632e8889becc4e7b72f62635c38892929a3ed58141541ce57bff6c",
+          "wrongDigest": "2cbc7e0edeb9f178d4c333046932195a4e48c6b37fdf7aa06aa24cd91dc94b3e"
+        },
+        {
+          "language": "cpp",
+          "acceptedDigest": "a59b668767bb9511fce9cdfed0f27b0c07ba283341b89e7f8230ad0014e3ca00",
+          "wrongDigest": "24b8cdd2032998b6c8f68d4f468a7e84d48fec0927d0645e4e066f91239db88f"
+        },
+        {
+          "language": "c",
+          "acceptedDigest": "c996df03b4b036ffc475b442fe74f7be6498baad0d2b84588e52e0030c8372e7",
+          "wrongDigest": "14125aac5b83ef20a692e8bd20d41440d7dbb93be9ef5e72f608458f6191c671"
+        }
+      ],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "two-sum-count-pairs",
+      "sourceDigest": "915922e70a2664f27cdb1281ae68654c6de76b16fbac61dea0653a0a7a9d2c5d",
+      "contentDigest": "03c6c0edc574c887f2d67e4b1ad83d08470c98ba161d3e342302fd912160028e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "two-sum-ii-sorted",
+      "sourceDigest": "2b35195011147da8e8bfca64c17bb555e1ce0e215d299b7915d6a5336cc97d3a",
+      "contentDigest": "97bd317a67f72686883bf4bbedf6615f05aaa9713642670696231a94f5ed8eb7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "two-sum-iii-data-structure",
+      "sourceDigest": "a959589b5b489feaea07028efbc34fdbc3208e7611f3b48af50cc80fc782e782",
+      "contentDigest": "6de82731531a3bf35ba9f673bf72b5c423d16e312159510e80517405ed269806",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "ugly-number-ii",
+      "sourceDigest": "37059b0d19e5997db47e1b2da59d8ce30646652cf0bcfb46facec03d999425d9",
+      "contentDigest": "6dcd50dc0602ffae9013ff97548f5e14364e23d12a19de26399dc5efed262453",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "unique-paths",
+      "sourceDigest": "75501ae1bf3e69299c727db0eb5b9e740ad70f928bc229899bfd847e14a20dc1",
+      "contentDigest": "5cbe178519a4871f33d7d1183df09ea19070524defe36c960092cd8ae5c135c5",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "valid-anagram",
+      "sourceDigest": "afdaaa73935df142fb42de30c07206a967c774c2913bb4c2cb7c1501fbeb67b6",
+      "contentDigest": "2c06d8fc4b4ec79cf9059b1dd110a00ce35dfce68ee3a0e615262e65d3fbf89c",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "valid-parentheses",
+      "sourceDigest": "dc206809c96a5bdb80faa388b781add631d0bd63a7fc8017efd9406230a432c4",
+      "contentDigest": "7008c205053f98c8fb2162d92035af6d3ac3553156afad81a55330a459c88ccb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "valid-triangle-number",
+      "sourceDigest": "3efded5be59fdbc9f8f81b0d48f0cebac0f292e5b1db9e76dd83fc65e0ee1617",
+      "contentDigest": "b7cfe50e76c43a18e9158d08c3b072c5dd35d3bbc221148403485facd17ab2ed",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "validate-binary-search-tree",
+      "sourceDigest": "7f1dd0f13c79fdc4aaf33a35d76c00acae4509c02946ee6775ac504e3e7ecd1a",
+      "contentDigest": "0e183f182a8f594d10e93cb40cbdfb7349d18ed5056f68ee98d3cc5746a51ca7",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "walls-and-gates",
+      "sourceDigest": "b5138fa06f0892144abaa157a455913494402442eb0edb126f3761663f90548a",
+      "contentDigest": "776063e0b560ab065e28a52098b09a93546c36b4b4986dd27a036b23df0f3062",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "wiggle-subsequence",
+      "sourceDigest": "af999b1e37753c37840197a71926b5a2135a083d7131c821e970f8fc0cd07e51",
+      "contentDigest": "8db2ea40d6c1a08db8e9936ee729b39aced9bbe8a4631b3e8ca588472995c607",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "wildcard-matching",
+      "sourceDigest": "cbbcef2f3268e914555baf7486ef3eda12b6d4221433c0558cafdb564516ba00",
+      "contentDigest": "a4057263db8da5d2002c234850918fd472c49130657d25747c4869618279714d",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "word-break",
+      "sourceDigest": "f79d6ed8bef3531e97980762be46aa94cca843d7ce0e75978960858a9816407f",
+      "contentDigest": "f7b972039362e442061977f75f1c18c6118177f748dc7962917ce3955d2e189e",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "word-ladder",
+      "sourceDigest": "baeb8798c0a953c2701d9ebed8cb2eaa34d91fb9ba2e01a97bc4ce725f821324",
+      "contentDigest": "236c2040d4b01734e50ada62b3fd4c0e6b3694b9b721b1c861792e2c54dfda60",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "word-search",
+      "sourceDigest": "df1c7eb7522096233e23a3f34c86bb5d044a806c61be35eb76a4da854ab552c0",
+      "contentDigest": "7d2572faa9d331141baf3cdc3fff1d3860ffd90d8e9472146823a63d761beffb",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    },
+    {
+      "slug": "word-search-ii",
+      "sourceDigest": "64ee295f68fd2efe15a7f0b59d4eb274750ed7a59e6ae77088a0f5b575db8937",
+      "contentDigest": "9902e01f4b82a08456478a5033120d17d37318329f4cbc6e95aece533000f463",
+      "languages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "c"
+      ],
+      "targetUuid": null,
+      "proposedVersion": 1,
+      "disposition": "draft-only",
+      "fixtureLanguages": [],
+      "fixtureDigests": [],
+      "runtimeVerifiedLanguages": []
+    }
+  ]
+}

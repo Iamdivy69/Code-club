@@ -1,0 +1,5 @@
+ALTER TABLE "practice_quiz_attempts" ADD COLUMN "skipped" BOOLEAN NOT NULL DEFAULT false, ADD COLUMN "choice" INTEGER;
+CREATE TABLE "practice_daily_quizzes" ("day" VARCHAR(10) PRIMARY KEY, "question_id" TEXT NOT NULL, "topic" TEXT NOT NULL, "prompt" TEXT NOT NULL, "choices" JSONB NOT NULL, "answer" INTEGER NOT NULL, "explanation" TEXT NOT NULL);
+CREATE TABLE "practice_operational_settings" ("id" TEXT PRIMARY KEY DEFAULT 'global', "version" INTEGER NOT NULL DEFAULT 1, "maintenance" BOOLEAN NOT NULL DEFAULT false, "recruiter_registration" BOOLEAN NOT NULL DEFAULT true, "officer_registration" BOOLEAN NOT NULL DEFAULT true, "announcement" VARCHAR(1000) NOT NULL DEFAULT '');
+CREATE TABLE "practice_progress_resets" ("id" UUID PRIMARY KEY, "user_id" UUID NOT NULL, "actor_id" UUID NOT NULL, "reset_at" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "snapshot" JSONB NOT NULL);
+CREATE INDEX "practice_progress_resets_user_id_reset_at_idx" ON "practice_progress_resets"("user_id", "reset_at");

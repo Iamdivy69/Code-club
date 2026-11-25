@@ -1,0 +1,1440 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model University {
+  id           String       @id @default(uuid()) @db.Uuid
+  name         String
+  shortName    String?      @map("short_name") @db.VarChar(20)
+  emailDomains String[]     @map("email_domains")
+  country      String?      @db.VarChar(100)
+  state        String?      @db.VarChar(100)
+  city         String?      @db.VarChar(100)
+  isActive     Boolean      @default(true) @map("is_active")
+  maxStudents  Int?         @map("max_students")
+  maxTeachers  Int?         @map("max_teachers")
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamptz(3)
+  adminProfiles AdminProfile[]
+  bulkImports   BulkImport[]
+  classes       Class[]
+  students      Student[]
+  teachers      Teacher[]
+  practicePlacementTeam PracticePlacementMember[]
+  practiceOfficerApplications PracticeOfficerApplication[]
+  practiceInstitutionApplications PracticeInstitutionApplication[]
+
+  @@index([isActive])
+  @@map("universities")
+}
+
+model User {
+  practiceProgressEpoch PracticeProgressEpoch?
+  id                      String                   @id @default(uuid()) @db.Uuid
+  name                    String
+  email                   String                   @unique
+  passwordHash            String                   @map("password_hash")
+  role                    UserRole
+  isActive                Boolean                  @default(true) @map("is_active")
+  emailVerified           Boolean                  @default(false) @map("email_verified")
+  emailVerifiedAt         DateTime?                @map("email_verified_at") @db.Timestamptz(3)
+  lastLoginAt             DateTime?                @map("last_login_at") @db.Timestamptz(3)
+  loginCount              Int                      @default(0) @map("login_count")
+  mfaEnabled              Boolean                  @default(false) @map("mfa_enabled")
+  mfaSecret               String?                  @map("mfa_secret")
+  approvalStatus          ApprovalStatus           @default(APPROVED) @map("approval_status")
+  approvedAt              DateTime?                @map("approved_at") @db.Timestamptz(3)
+  approvedBy              String?                  @map("approved_by") @db.Uuid
+  rejectionReason         String?                  @map("rejection_reason")
+  createdAt               DateTime                 @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt               DateTime                 @updatedAt @map("updated_at") @db.Timestamptz(3)
+  deletedAt               DateTime?                @map("deleted_at") @db.Timestamptz(3)
+  mustResetPassword       Boolean                  @default(false) @map("must_reset_password")
+  auditLogs               AuditLog[]
+  emailVerificationTokens EmailVerificationToken[]
+  passwordResetTokens     PasswordResetToken[]
+  bulkImports             BulkImport[]
+  participantSessions     InterviewSession[]       @relation("SessionParticipant")
+  hostedSessions          InterviewSession[]       @relation("SessionHost")
+  practiceAccountRestriction PracticeAccountRestriction?
+  practiceCoachingInsight PracticeCoachingInsight?
+  practiceWeeklyReview    PracticeWeeklyReview?
+  practiceMockInterviews PracticeMockInterview[]
+  practiceHintAllowances PracticeHintAllowance[]
+  practiceSubmissions     PracticeSubmission[]
+  practiceStudyItems      PracticeStudyItem[]
+  practiceProfile         PracticeProfile?
+  practiceExternalStats   PracticeExternalStats?
+  practiceProfileDownload PracticeProfileDownload?
+  practiceAmbassadorClaims PracticeAmbassadorClaim[]
+  practiceMembershipGrants PracticeMembershipGrant[] @relation("PracticeMembershipOwner")
+  practiceMembershipIssued PracticeMembershipGrant[] @relation("PracticeMembershipIssuer")
+  practiceMembershipRevoked PracticeMembershipGrant[] @relation("PracticeMembershipRevoker")
+  practicePlaylists       PracticePlaylist[]
+  practiceQuizAttempts    PracticeQuizAttempt[]
+  practiceCertificates    PracticeCertificate[]
+  practiceCohortArchives  PracticeCohortArchive[]
+  practiceCohortInvites   PracticeCohortInvite[]
+  practiceOfficerApplications PracticeOfficerApplication[] @relation("PracticeOfficerApplicant")
+  practiceOfficerReviews  PracticeOfficerApplication[] @relation("PracticeOfficerReviewer")
+  practiceInstitutionApplications PracticeInstitutionApplication[] @relation("PracticeInstitutionApplicant")
+  practiceInstitutionReviews PracticeInstitutionApplication[] @relation("PracticeInstitutionReviewer")
+  practiceNotifications   PracticeNotification[]
+  practiceGoogleIdentity  PracticeGoogleIdentity?
+  practiceRecruiter       PracticeRecruiter?
+  practicePublications    PracticePublication[]
+  practiceVotes           PracticePublicationVote[]
+  practiceReferralSent    PracticeReferral[] @relation("PracticeReferrer")
+  practiceReferralSource  PracticeReferral? @relation("PracticeReferred")
+  practiceCredits         PracticeCredit[]
+  practiceRedemptions     PracticeRedemption[]
+  practiceTestsCreated    PracticeAssessment[] @relation("PracticeTestRecruiter")
+  practiceTestsReceived   PracticeAssessment[] @relation("PracticeTestCandidate")
+  practiceInterestsSent   PracticeRecruiterInterest[] @relation("PracticeInterestRecruiter")
+  practiceInterestsReceived PracticeRecruiterInterest[] @relation("PracticeInterestCandidate")
+  practiceHostedContests  PracticeCompetition[]
+  practiceContestEntries  PracticeCompetitionPlayer[]
+  practiceProgress        PracticeProgress[]
+  createdProblems         Problem[]                @relation("ProblemCreator")
+  sessions                Session[]
+  student                 Student?
+  teacher                 Teacher?
+  adminProfile            AdminProfile?
+
+  @@index([email])
+  @@index([role])
+  @@index([deletedAt])
+  @@index([isActive])
+  @@index([approvalStatus])
+  @@index([createdAt], map: "users_practice_registration_created_at_idx")
+  @@map("users")
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model AdminProfile {
+  userId       String     @id @map("user_id") @db.Uuid
+  universityId String     @map("university_id") @db.Uuid
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime   @updatedAt @map("updated_at") @db.Timestamptz(3)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university   University @relation(fields: [universityId], references: [id])
+
+  @@index([universityId])
+  @@map("admin_profiles")
+}
+
+model Student {
+  userId          String            @id @map("user_id") @db.Uuid
+  registerNumber  String            @map("register_number") @db.VarChar(50)
+  degree          String            @db.VarChar(100)
+  batch           String            @db.VarChar(20)
+  universityId    String            @map("university_id") @db.Uuid
+  createdAt       DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt       DateTime          @updatedAt @map("updated_at") @db.Timestamptz(3)
+  enrollments     ClassStudent[]
+  roadmapProgress RoadmapProgress[]
+  progress        StudentProgress[]
+  university      University        @relation(fields: [universityId], references: [id])
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  qrIdentifier      String             @unique @default(uuid()) @map("qr_identifier")
+  attendanceRecords AttendanceRecord[]
+
+  @@unique([registerNumber, universityId])
+  @@index([universityId])
+  @@index([batch])
+  @@index([degree])
+  @@index([registerNumber])
+  @@map("students")
+}
+
+model Teacher {
+  userId       String     @id @map("user_id") @db.Uuid
+  universityId String     @map("university_id") @db.Uuid
+  department   String?    @db.VarChar(100)
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime   @updatedAt @map("updated_at") @db.Timestamptz(3)
+  classes      Class[]
+  attendanceSessions AttendanceSession[]
+  practicePlacementMember PracticePlacementMember?
+  university   University @relation(fields: [universityId], references: [id])
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([universityId])
+  @@index([department])
+  @@map("teachers")
+}
+
+model Class {
+  id               String         @id @default(uuid()) @db.Uuid
+  name             String
+  code             String         @db.VarChar(50)
+  degree           String         @db.VarChar(100)
+  batch            String         @db.VarChar(20)
+  universityId     String         @map("university_id") @db.Uuid
+  primaryTeacherId String         @map("primary_teacher_id") @db.Uuid
+  semester         String?        @db.VarChar(20)
+  academicYear     String?        @map("academic_year") @db.VarChar(20)
+  startDate        DateTime?      @map("start_date") @db.Timestamptz(3)
+  endDate          DateTime?      @map("end_date") @db.Timestamptz(3)
+  maxStudents      Int            @default(60) @map("max_students")
+  isActive         Boolean        @default(true) @map("is_active")
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+  deletedAt        DateTime?      @map("deleted_at") @db.Timestamptz(3)
+  enrollments      ClassStudent[]
+  practiceAssignments PracticeAssignment[]
+  practiceCohortArchive PracticeCohortArchive?
+  practiceCohortInvites PracticeCohortInvite[]
+  attendanceSessions AttendanceSession[]
+  primaryTeacher   Teacher        @relation(fields: [primaryTeacherId], references: [userId])
+  university       University     @relation(fields: [universityId], references: [id])
+
+  @@unique([universityId, code])
+  @@index([universityId])
+  @@index([primaryTeacherId])
+  @@index([batch])
+  @@index([code])
+  @@index([degree])
+  @@index([isActive])
+  @@index([deletedAt])
+  @@map("classes")
+}
+
+model ClassStudent {
+  id         String   @id @default(uuid()) @db.Uuid
+  classId    String   @map("class_id") @db.Uuid
+  studentId  String   @map("student_id") @db.Uuid
+  enrolledAt DateTime @default(now()) @map("enrolled_at") @db.Timestamptz(3)
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  class      Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  student    Student  @relation(fields: [studentId], references: [userId], onDelete: Cascade)
+
+  @@unique([classId, studentId])
+  @@index([studentId])
+  @@index([classId])
+  @@map("class_students")
+}
+
+model Syllabus {
+  id        String    @id @default(uuid()) @db.Uuid
+  title     String
+  degree    String    @db.VarChar(100)
+  batch     String    @db.VarChar(20)
+  order     Int
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+  problems  Problem[]
+
+  @@index([degree, batch])
+  @@index([order])
+  @@map("syllabus")
+}
+
+model Problem {
+  practiceEditionMissions PracticeEditionMission[]
+  id                String            @id @default(uuid()) @db.Uuid
+  title             String
+  slug              String            @unique @db.VarChar(200)
+  description       String
+  topic             String            @db.VarChar(100)
+  category          String?           @db.VarChar(200)
+  difficulty        Difficulty
+  syllabusId        String?           @map("syllabus_id") @db.Uuid
+  problemType       String            @default("CODING") @map("problem_type") @db.VarChar(50)
+  constraints       String?
+  examples          Json?
+  timeComplexity    String?           @map("time_complexity") @db.VarChar(50)
+  spaceComplexity   String?           @map("space_complexity") @db.VarChar(50)
+  variants          Json?
+  visualizationType String?           @map("visualization_type") @db.VarChar(50)
+  createdAt         DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt         DateTime          @updatedAt @map("updated_at") @db.Timestamptz(3)
+  createdByUserId   String?           @map("created_by_user_id") @db.Uuid
+  expectedOutput    Json?             @map("expected_output")
+  hints             Json?
+  isPublished       Boolean           @default(false) @map("is_published")
+  starterCode       Json?             @map("starter_code")
+  practiceContract  PracticeProblemContract?
+  practiceMockInterviews PracticeMockInterview[]
+  practiceStudyItems PracticeStudyItem[]
+  practiceDailyChallenges PracticeDailyChallenge[]
+  practiceContestProblems PracticeCompetitionProblem[]
+  practiceContestSolves PracticeCompetitionSolve[]
+  practiceTestProblems PracticeAssessmentProblem[]
+  practiceSubmissions PracticeSubmission[]
+  practiceProgress  PracticeProgress[]
+  hiddenTestCases   HiddenTestCase[]
+  createdBy         User?             @relation("ProblemCreator", fields: [createdByUserId], references: [id])
+  syllabus          Syllabus?         @relation(fields: [syllabusId], references: [id])
+  roadmapProblems   RoadmapProblem[]
+  progress          StudentProgress[]
+
+  @@index([topic])
+  @@index([difficulty])
+  @@index([syllabusId])
+  @@index([slug])
+  @@index([isPublished])
+  @@index([createdByUserId])
+  @@map("problems")
+}
+
+model StudentProgress {
+  id               String         @id @default(uuid()) @db.Uuid
+  studentId        String         @map("student_id") @db.Uuid
+  problemId        String         @map("problem_id") @db.Uuid
+  status           ProgressStatus
+  attempts         Int            @default(0)
+  timeSpentSeconds Int            @default(0) @map("time_spent_seconds")
+  score            Decimal?       @db.Decimal(5, 2)
+  bestTimeMs       Int?           @map("best_time_ms")
+  variantUsed      String?        @map("variant_used") @db.VarChar(100)
+  codeSubmission   String?        @map("code_submission")
+  solvedAt         DateTime?      @map("solved_at") @db.Timestamptz(3)
+  lastAttemptedAt  DateTime?      @map("last_attempted_at") @db.Timestamptz(3)
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+  problem          Problem        @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  student          Student        @relation(fields: [studentId], references: [userId], onDelete: Cascade)
+
+  @@unique([studentId, problemId])
+  @@index([studentId])
+  @@index([problemId])
+  @@index([status])
+  @@index([solvedAt])
+  @@map("student_progress")
+}
+
+model Session {
+  id                String   @id @default(uuid()) @db.Uuid
+  userId            String   @map("user_id") @db.Uuid
+  deviceFingerprint String?  @map("device_fingerprint")
+  ipAddress         String   @map("ip_address") @db.Inet
+  userAgent         String   @map("user_agent")
+  // SECURITY (SEC-005): only the peppered SHA-256 hash of refresh tokens is
+  // stored — never the plaintext token. See scripts/backfill-refresh-hash.ts
+  // (run BEFORE applying the drop-column migration to keep live sessions).
+  refreshTokenHash  String   @unique @map("refresh_token_hash")
+  expiresAt         DateTime @map("expires_at") @db.Timestamptz(3)
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  lastActivityAt    DateTime @default(now()) @map("last_activity_at") @db.Timestamptz(3)
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  practiceGoogleAttempts PracticeGoogleAttempt[]
+
+  @@index([userId])
+  @@index([refreshTokenHash])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model PracticeGoogleIdentity {
+  subject   String   @id @db.VarChar(255)
+  userId    String   @unique @map("user_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("practice_google_identities")
+}
+
+model PracticeGoogleAttempt {
+  stateDigest   String   @id @map("state_digest") @db.VarChar(64)
+  browserDigest String   @map("browser_digest") @db.VarChar(64)
+  nonce         String   @db.VarChar(64)
+  verifier      String   @db.VarChar(64)
+  nextPath      String   @map("next_path") @db.VarChar(500)
+  referral      String?  @db.VarChar(64)
+  linkSessionId String?  @map("link_session_id") @db.Uuid
+  expiresAt     DateTime @map("expires_at") @db.Timestamptz(3)
+  linkSession   Session? @relation(fields: [linkSessionId], references: [id], onDelete: Cascade)
+
+  @@index([expiresAt])
+  @@index([browserDigest])
+  @@index([linkSessionId])
+  @@map("practice_google_attempts")
+}
+
+model AuditLog {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String?  @map("user_id") @db.Uuid
+  eventType    String   @map("event_type") @db.VarChar(100)
+  resourceType String?  @map("resource_type") @db.VarChar(100)
+  resourceId   String?  @map("resource_id") @db.Uuid
+  ipAddress    String?  @map("ip_address") @db.Inet
+  userAgent    String?  @map("user_agent")
+  metadata     Json?
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user         User?    @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@index([resourceType, resourceId])
+  @@map("audit_logs")
+}
+
+model BulkImport {
+  id           String     @id @default(uuid()) @db.Uuid
+  universityId String     @map("university_id") @db.Uuid
+  createdBy    String     @map("created_by") @db.Uuid
+  fileName     String     @map("file_name")
+  total        Int
+  successful   Int
+  failed       Int
+  status       String     @default("processing") @db.VarChar(50)
+  failedRows   Json?      @map("failed_rows")
+  durationMs   Int?       @map("duration_ms")
+  requestId    String?    @map("request_id") @db.VarChar(100)
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+  admin        User       @relation(fields: [createdBy], references: [id], onDelete: SetNull)
+  university   University @relation(fields: [universityId], references: [id])
+
+  @@index([universityId])
+  @@index([createdBy])
+  @@index([createdAt])
+  @@map("bulk_imports")
+}
+
+model RoadmapChapter {
+  id            String           @id @default(uuid()) @db.Uuid
+  order         Int
+  title         String
+  totalProblems Int              @default(0) @map("total_problems")
+  createdAt     DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+  problems      RoadmapProblem[]
+
+  @@index([order])
+  @@map("roadmap_chapters")
+}
+
+model RoadmapProblem {
+  id          String            @id @default(uuid()) @db.Uuid
+  chapterId   String            @map("chapter_id") @db.Uuid
+  order       Int
+  title       String
+  difficulty  Difficulty
+  topic       String            @db.VarChar(100)
+  leetcodeUrl String?           @map("leetcode_url")
+  problemId   String?           @map("problem_id") @db.Uuid
+  createdAt   DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+  chapter     RoadmapChapter    @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  problem     Problem?          @relation(fields: [problemId], references: [id])
+  progress    RoadmapProgress[]
+
+  @@index([chapterId])
+  @@map("roadmap_problems")
+}
+
+model RoadmapProgress {
+  id               String         @id @default(uuid()) @db.Uuid
+  studentId        String         @map("student_id") @db.Uuid
+  roadmapProblemId String         @map("roadmap_problem_id") @db.Uuid
+  status           ProgressStatus
+  solvedAt         DateTime?      @map("solved_at") @db.Timestamptz(3)
+  updatedAt        DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+  roadmapProblem   RoadmapProblem @relation(fields: [roadmapProblemId], references: [id], onDelete: Cascade)
+  student          Student        @relation(fields: [studentId], references: [userId], onDelete: Cascade)
+
+  @@unique([studentId, roadmapProblemId])
+  @@index([studentId])
+  @@map("roadmap_progress")
+}
+
+model InterviewSession {
+  id           String   @id @default(uuid()) @db.Uuid
+  hostId       String   @map("host_id") @db.Uuid
+  candidateId  String?  @map("candidate_id") @db.Uuid
+  status       String   @default("waiting") @db.VarChar(20)
+  problems     Json?
+  problem      String?
+  difficulty   String?  @db.VarChar(50)
+  roomId       String   @unique @map("room_id") @db.VarChar(100)
+  score        String?  @db.VarChar(50)
+  problemCodes Json?    @map("problem_codes")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  candidate    User?    @relation("SessionParticipant", fields: [candidateId], references: [id])
+  host         User     @relation("SessionHost", fields: [hostId], references: [id], onDelete: Cascade)
+
+  @@index([hostId])
+  @@index([candidateId])
+  @@index([status])
+  @@map("interview_sessions")
+}
+
+model HiddenTestCase {
+  id             String   @id @default(uuid()) @db.Uuid
+  problemId      String   @map("problem_id") @db.Uuid
+  description    String?
+  inputCode      Json     @map("input_code")
+  expectedOutput String   @map("expected_output")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  problem        Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@index([problemId])
+  @@map("hidden_test_cases")
+}
+
+enum UserRole {
+  STUDENT
+  TEACHER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  ATTEMPTED
+  SOLVED
+}
+
+model EmailVerificationToken {
+  id        String   @id @default(uuid()) @db.Uuid
+  token     String   @unique
+  userId    String   @map("user_id") @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @map("expires_at") @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([userId])
+  @@index([token])
+  @@map("email_verification_tokens")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(uuid()) @db.Uuid
+  token     String   @unique
+  userId    String   @map("user_id") @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @map("expires_at") @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([userId])
+  @@index([token])
+  @@map("password_reset_tokens")
+}
+
+enum AttendanceSessionStatus {
+  ACTIVE
+  CLOSED
+}
+
+enum AttendanceStatus {
+  ABSENT
+  PRESENT
+  LATE
+  EXCUSED
+}
+
+enum AttendanceSource {
+  QR_SCAN
+  MANUAL
+}
+
+model AttendanceSession {
+  id            String                  @id @default(uuid()) @db.Uuid
+  classId       String                  @map("class_id") @db.Uuid
+  teacherId     String                  @map("teacher_id") @db.Uuid
+
+  // Snapshots — preserved even if the underlying class/teacher record later changes/is deleted
+  className     String                  @map("class_name")
+  classCode     String                  @map("class_code")
+  teacherName   String                  @map("teacher_name")
+
+  subject       String
+  topic         String?
+  sessionDate   DateTime                @map("session_date") @db.Timestamptz(3)
+  startedAt     DateTime                @map("started_at") @db.Timestamptz(3)
+  expiresAt     DateTime                @map("expires_at") @db.Timestamptz(3)
+  closedAt      DateTime?               @map("closed_at") @db.Timestamptz(3)
+
+  status        AttendanceSessionStatus @default(ACTIVE)
+  createdAt     DateTime                @default(now()) @map("created_at") @db.Timestamptz(3)
+  deletedAt     DateTime?               @map("deleted_at") @db.Timestamptz(3)
+  deletedBy     String?                 @map("deleted_by") @db.Uuid
+
+  class         Class                   @relation(fields: [classId], references: [id])
+  teacher       Teacher                 @relation(fields: [teacherId], references: [userId])
+  records       AttendanceRecord[]
+
+  @@index([classId])
+  @@index([teacherId])
+  @@index([status])
+  @@map("attendance_sessions")
+}
+
+model AttendanceRecord {
+  id              String            @id @default(uuid()) @db.Uuid
+  sessionId       String            @map("session_id") @db.Uuid
+  studentId       String            @map("student_id") @db.Uuid
+
+  status          AttendanceStatus  @default(ABSENT)
+  source          AttendanceSource?
+
+  markedAt        DateTime?         @map("marked_at") @db.Timestamptz(3)
+  markedByTeacher String?           @map("marked_by_teacher") @db.Uuid
+  scannedByTeacherId String?           @map("scanned_by_teacher_id") @db.Uuid
+  lastScannedAt   DateTime?         @map("last_scanned_at") @db.Timestamptz(3)
+
+  createdAt       DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  session         AttendanceSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  student         Student           @relation(fields: [studentId], references: [userId], onDelete: Cascade)
+
+  @@unique([sessionId, studentId])
+  @@index([sessionId])
+  @@index([studentId])
+  @@index([status])
+  @@map("attendance_records")
+}
+
+model PracticeWeeklyReview {
+  userId     String   @id @map("user_id") @db.Uuid
+  enabled    Boolean  @default(false)
+  period     DateTime? @db.Date
+  leaseToken String?  @map("lease_token") @db.Uuid
+  leaseUntil DateTime? @map("lease_until") @db.Timestamptz(3)
+  dispatchAt DateTime? @map("dispatch_at") @db.Timestamptz(3)
+  lastSentAt DateTime? @map("last_sent_at") @db.Timestamptz(3)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([enabled, userId], map: "practice_weekly_reviews_enabled_user_idx")
+  @@map("practice_weekly_reviews")
+}
+
+model PracticeMockInterview {
+  id         String                      @id @default(uuid()) @db.Uuid
+  userId     String                      @map("user_id") @db.Uuid
+  problemId  String?                     @map("problem_id") @db.Uuid
+  requestKey String                      @map("request_key") @db.Uuid
+  problem    Json
+  startedAt  DateTime                    @map("started_at") @db.Timestamptz(3)
+  expiresAt  DateTime                    @map("expires_at") @db.Timestamptz(3)
+  endedAt    DateTime?                   @map("ended_at") @db.Timestamptz(3)
+  turnCount  Int                         @default(0) @map("turn_count")
+  leaseToken String?                     @map("lease_token") @db.Uuid
+  leaseUntil DateTime?                   @map("lease_until") @db.Timestamptz(3)
+  user       User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercise   Problem?                    @relation(fields: [problemId], references: [id], onDelete: SetNull)
+  turns      PracticeMockInterviewTurn[]
+
+  @@unique([userId, requestKey])
+  @@index([userId, startedAt, id])
+  @@index([problemId])
+  @@map("practice_mock_interviews")
+}
+
+model PracticeMockInterviewTurn {
+  interviewId String                @map("interview_id") @db.Uuid
+  position    Int
+  requestKey  String                @map("request_key") @db.Uuid
+  inputDigest String                @map("input_digest") @db.Char(64)
+  answer      String
+  question    String
+  createdAt   DateTime              @map("created_at") @db.Timestamptz(3)
+  interview   PracticeMockInterview @relation(fields: [interviewId], references: [id], onDelete: Cascade)
+
+  @@id([interviewId, position])
+  @@unique([interviewId, requestKey])
+  @@map("practice_mock_interview_turns")
+}
+
+model PracticeHintCache {
+  problemId  String                  @map("problem_id") @db.Uuid
+  contextKey String                  @map("context_key") @db.Char(64)
+  level      Int
+  hint       String?
+  expiresAt  DateTime?              @map("expires_at") @db.Timestamptz(3)
+  leaseToken String?                @map("lease_token") @db.Uuid
+  leaseUntil DateTime?              @map("lease_until") @db.Timestamptz(3)
+  contract   PracticeProblemContract @relation(fields: [problemId], references: [problemId], onDelete: Cascade)
+
+  @@id([problemId, contextKey, level])
+  @@map("practice_hint_cache")
+}
+
+model PracticeHintAllowance {
+  userId String @map("user_id") @db.Uuid
+  day    String @db.VarChar(10)
+  used   Int
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+  @@map("practice_hint_allowances")
+}
+
+model PracticeCoachingInsight {
+  userId       String    @id @map("user_id") @db.Uuid
+  insights     Json?
+  generatedAt  DateTime? @map("generated_at") @db.Timestamptz(3)
+  retryAt      DateTime? @map("retry_at") @db.Timestamptz(3)
+  leaseToken   String?   @map("lease_token") @db.Uuid
+  leaseUntil   DateTime? @map("lease_until") @db.Timestamptz(3)
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("practice_coaching_insights")
+}
+
+model PracticeAccountRestriction {
+  userId      String   @id @map("user_id") @db.Uuid
+  suspendedAt DateTime @default(now()) @map("suspended_at") @db.Timestamptz(3)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("practice_account_restrictions")
+}
+
+model PracticeProblemContract {
+  problemId       String             @id @map("problem_id") @db.Uuid
+  functionName    String             @map("function_name")
+  parameterOrder  String[]           @map("parameter_order")
+  nativeSignature Json?              @map("native_signature")
+  designContract  Json?              @map("design_contract")
+  editorial       String?
+  contentVersion  Int                @default(1) @map("content_version")
+  comparisonMode  PracticeComparison @default(EXACT) @map("comparison_mode")
+  hiddenSetEnabled Boolean           @default(true) @map("hidden_set_enabled")
+  contestOnly      Boolean           @default(false) @map("contest_only")
+  enabled         Boolean            @default(false)
+  problem         Problem            @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  cases           PracticeTestCase[]
+  catalogue       PracticeCatalogueEntry?
+  hintCache       PracticeHintCache[]
+
+  @@map("practice_problem_contracts")
+}
+
+model PracticeCatalogueEntry {
+  problemId      String                  @id @map("problem_id") @db.Uuid
+  source         String                  @db.VarChar(100)
+  sourceId       String                  @map("source_id") @db.VarChar(100)
+  sourceSlug     String                  @map("source_slug") @db.VarChar(200)
+  sourceVersion  String                  @map("source_version") @db.VarChar(120)
+  sourceDigest   String                  @map("source_digest") @db.Char(64)
+  contentDigest  String                  @map("content_digest") @db.Char(64)
+  mappedLegacy   Boolean                 @default(false) @map("mapped_legacy")
+  visualizerPath String?                 @map("visualizer_path") @db.VarChar(250)
+  review         Json
+  display        Json
+  contract       PracticeProblemContract @relation(fields: [problemId], references: [problemId], onDelete: Cascade)
+
+  @@unique([source, sourceId])
+  @@map("practice_catalogue_entries")
+}
+
+enum PracticeComparison {
+  EXACT
+  UNORDERED
+}
+
+model PracticeTestCase {
+  id                 String                  @id @default(uuid()) @db.Uuid
+  problemId          String                  @map("problem_id") @db.Uuid
+  position           Int
+  hidden             Boolean
+  inputJson          String                  @map("input_json")
+  expectedOutputJson String                  @map("expected_output_json")
+  contract           PracticeProblemContract @relation(fields: [problemId], references: [problemId], onDelete: Cascade)
+
+  @@unique([problemId, hidden, position])
+  @@map("practice_test_cases")
+}
+
+enum PracticeVerdict {
+  ACCEPTED
+  WRONG_ANSWER
+  COMPILATION_ERROR
+  RUNTIME_ERROR
+  TIME_LIMIT_EXCEEDED
+}
+
+enum PracticeReflectionRating {
+  easy
+  manageable
+  challenging
+  reallyDifficult
+}
+
+model PracticeSubmission {
+  progressEpoch String? @map("progress_epoch") @db.Uuid
+  progressEligible Boolean @default(true) @map("progress_eligible")
+  id             String          @id @default(uuid()) @db.Uuid
+  userId         String          @map("user_id") @db.Uuid
+  problemId      String          @map("problem_id") @db.Uuid
+  problemVersion Int             @map("problem_version")
+  language       String
+  code           String
+  verdict        PracticeVerdict
+  passed         Int
+  total          Int
+  visiblePassed  Int             @map("visible_passed")
+  hiddenPassed   Int             @map("hidden_passed")
+  runtimeMs      Int?            @map("runtime_ms")
+  memoryKb       Int?            @map("memory_kb")
+  diagnostic     String?
+  requestKey     String          @map("request_key") @db.Uuid
+  requestDigest  String          @map("request_digest")
+  reflectionRating PracticeReflectionRating? @map("reflection_rating")
+  reflectedAt      DateTime?                @map("reflected_at") @db.Timestamptz(3)
+  competitionScore PracticeCompetitionSolve?
+  assessmentScore PracticeAssessmentSolve?
+  createdAt      DateTime        @default(now()) @map("created_at") @db.Timestamptz(3)
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem        Problem         @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, requestKey])
+  @@index([userId, problemId, createdAt, id])
+  @@index([userId, createdAt, id], map: "practice_submissions_user_activity_idx")
+  @@index([problemId, verdict])
+  @@index([createdAt])
+  @@map("practice_submissions")
+}
+
+model PracticeProgress {
+  userId        String         @map("user_id") @db.Uuid
+  problemId     String         @map("problem_id") @db.Uuid
+  status        ProgressStatus
+  attemptCount  Int            @default(0) @map("attempt_count")
+  acceptedCount Int            @default(0) @map("accepted_count")
+  firstSolvedAt DateTime?      @map("first_solved_at") @db.Timestamptz(3)
+  lastAttemptAt DateTime       @map("last_attempt_at") @db.Timestamptz(3)
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem       Problem        @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([userId, problemId])
+  @@index([problemId])
+  @@map("practice_progress")
+}
+
+model PracticeStudyItem {
+  userId     String   @map("user_id") @db.Uuid
+  problemId  String   @map("problem_id") @db.Uuid
+  saved      Boolean  @default(false)
+  note       String   @default("")
+  updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem    Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([userId, problemId])
+  @@index([problemId])
+  @@map("practice_study_items")
+}
+
+enum PracticeExternalStatsSource {
+  manual
+  fetched
+}
+
+model PracticeExternalStats {
+  userId      String                       @id @map("user_id") @db.Uuid
+  revision    String                       @db.Uuid
+  username    String?                      @db.VarChar(50)
+  source      PracticeExternalStatsSource?
+  easy        Int
+  medium      Int
+  hard        Int
+  recordedAt  DateTime?                    @map("recorded_at") @db.Timestamptz(3)
+  user        User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("practice_external_stats")
+}
+
+model PracticeProfile {
+  userId      String   @id @map("user_id") @db.Uuid
+  handle      String   @unique @db.VarChar(32)
+  bio         String   @default("")
+  isPublic    Boolean  @default(false) @map("is_public")
+  hiringOpen  Boolean  @default(false) @map("hiring_open")
+  sharePlacement Boolean @default(false) @map("share_placement")
+  availableForWork Boolean @default(false) @map("available_for_work")
+  preferredRole String? @map("preferred_role") @db.VarChar(60)
+  expectedGraduation Int? @map("expected_graduation")
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  proof       PracticeProfileProof?
+
+  @@map("practice_profiles")
+}
+
+enum PracticeMembershipPlan {
+  pro_monthly
+  pro_yearly
+  founding_lifetime
+  lifetime
+  ambassador_reward
+}
+
+model PracticeMembershipGrant {
+  id               String                 @id @db.Uuid
+  userId           String                 @map("user_id") @db.Uuid
+  plan             PracticeMembershipPlan
+  grantedAt        DateTime               @default(now()) @map("granted_at") @db.Timestamptz(3)
+  expiresAt        DateTime?              @map("expires_at") @db.Timestamptz(3)
+  issuedById       String?                @map("issued_by_id") @db.Uuid
+  reason           String                 @db.VarChar(280)
+  revokedAt        DateTime?              @map("revoked_at") @db.Timestamptz(3)
+  revokedById      String?                @map("revoked_by_id") @db.Uuid
+  revocationReason String?                @map("revocation_reason") @db.VarChar(280)
+  user             User                   @relation("PracticeMembershipOwner", fields: [userId], references: [id], onDelete: Cascade)
+  issuedBy         User?                  @relation("PracticeMembershipIssuer", fields: [issuedById], references: [id], onDelete: SetNull)
+  revokedBy        User?                  @relation("PracticeMembershipRevoker", fields: [revokedById], references: [id], onDelete: SetNull)
+  ambassadorClaims PracticeAmbassadorClaim[]
+
+  @@index([userId, grantedAt])
+  @@map("practice_membership_grants")
+}
+
+model PracticeAmbassadorClaim {
+  userId      String                   @map("user_id") @db.Uuid
+  milestoneId String                   @map("milestone_id") @db.VarChar(24)
+  rewardDays  Int                      @map("reward_days")
+  claimedAt   DateTime                 @default(now()) @map("claimed_at") @db.Timestamptz(3)
+  grantId     String?                  @map("grant_id") @db.Uuid
+  activatedAt DateTime?                @map("activated_at") @db.Timestamptz(3)
+  user        User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  grant       PracticeMembershipGrant? @relation(fields: [grantId], references: [id], onDelete: SetNull)
+
+  @@id([userId, milestoneId])
+  @@index([grantId])
+  @@map("practice_ambassador_claims")
+}
+
+model PracticeProfileDownload {
+  userId     String @id @map("user_id") @db.Uuid
+  month      String @db.VarChar(7)
+  requestKey String @map("request_key") @db.Uuid
+  snapshot   Json
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("practice_profile_downloads")
+}
+
+model PracticeProfileProof {
+  id       String          @id @db.Uuid
+  userId   String          @unique @map("user_id") @db.Uuid
+  handle   String          @db.VarChar(32)
+  signedAt DateTime        @map("signed_at") @db.Timestamptz(3)
+  easy     Int
+  medium   Int
+  hard     Int
+  digest   String          @db.VarChar(64)
+  profile  PracticeProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("practice_profile_proofs")
+}
+
+model PracticePlaylist {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  name      String   @db.VarChar(100)
+  problemIds String[] @map("problem_ids") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("practice_playlists")
+}
+
+model PracticeDailyChallenge {
+  day       String  @id @db.VarChar(10)
+  problemId String  @map("problem_id") @db.Uuid
+  problem   Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@index([problemId])
+  @@map("practice_daily_challenges")
+}
+
+model PracticeQuizAttempt {
+  userId      String   @map("user_id") @db.Uuid
+  day         String   @db.VarChar(10)
+  score       Int
+  total       Int
+  skipped     Boolean @default(false)
+  choice      Int?
+  completedAt DateTime @default(now()) @map("completed_at") @db.Timestamptz(3)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+  @@map("practice_quiz_attempts")
+}
+
+model PracticeCertificate {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  track     String   @db.VarChar(50)
+  issuerName String  @map("issuer_name")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, track])
+  @@map("practice_certificates")
+}
+
+enum PracticeCompetitionKind {
+  CONTEST
+  BATTLE
+}
+
+model PracticeCompetition {
+  id          String   @id @default(uuid()) @db.Uuid
+  hostId      String   @map("host_id") @db.Uuid
+  title       String   @db.VarChar(100)
+  description String   @default("")
+  kind        PracticeCompetitionKind @default(CONTEST)
+  isPrivate   Boolean  @default(false) @map("is_private")
+  joinCode    String?  @unique @map("join_code")
+  startsAt    DateTime? @map("starts_at") @db.Timestamptz(3)
+  endsAt      DateTime? @map("ends_at") @db.Timestamptz(3)
+  battleDurationMinutes Int? @map("battle_duration_minutes")
+  battleMaxTeamSize Int? @map("battle_max_team_size")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  host        User     @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  problems    PracticeCompetitionProblem[]
+  players     PracticeCompetitionPlayer[]
+
+  @@index([hostId])
+  @@index([isPrivate, endsAt])
+  @@map("practice_competitions")
+}
+
+model PracticeCompetitionProblem {
+  competitionId String @map("competition_id") @db.Uuid
+  problemId     String @map("problem_id") @db.Uuid
+  position      Int
+  version       Int
+  competition   PracticeCompetition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+  problem       Problem             @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([competitionId, problemId])
+  @@unique([competitionId, position])
+  @@index([problemId])
+  @@map("practice_competition_problems")
+}
+
+model PracticeCompetitionPlayer {
+  competitionId String   @map("competition_id") @db.Uuid
+  userId        String   @map("user_id") @db.Uuid
+  joinedAt      DateTime @default(now()) @map("joined_at") @db.Timestamptz(3)
+  displayName   String   @map("display_name") @db.VarChar(50)
+  team          Int?
+  competition   PracticeCompetition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+  user          User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  solves        PracticeCompetitionSolve[]
+
+  @@id([competitionId, userId])
+  @@index([userId])
+  @@map("practice_competition_players")
+}
+
+model PracticeCompetitionSolve {
+  competitionId String @map("competition_id") @db.Uuid
+  userId        String @map("user_id") @db.Uuid
+  problemId     String @map("problem_id") @db.Uuid
+  submissionId  String @unique @map("submission_id") @db.Uuid
+  points        Int
+  solvedAt      DateTime @map("solved_at") @db.Timestamptz(3)
+  player        PracticeCompetitionPlayer @relation(fields: [competitionId, userId], references: [competitionId, userId], onDelete: Cascade)
+  submission    PracticeSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  problem       Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([competitionId, userId, problemId])
+  @@index([problemId])
+  @@map("practice_competition_solves")
+}
+
+model PracticeCohortArchive {
+  classId    String   @id @map("class_id") @db.Uuid
+  archivedBy String?  @map("archived_by") @db.Uuid
+  archivedAt DateTime @default(now()) @map("archived_at") @db.Timestamptz(3)
+  classroom  Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  actor      User?    @relation(fields: [archivedBy], references: [id], onDelete: SetNull)
+
+  @@index([archivedBy])
+  @@map("practice_cohort_archives")
+}
+
+model PracticeCohortInvite {
+  classId   String   @map("class_id") @db.Uuid
+  email     String   @db.VarChar(254)
+  invitedBy String?  @map("invited_by") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  classroom Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  actor     User?    @relation(fields: [invitedBy], references: [id], onDelete: SetNull)
+
+  @@id([classId, email])
+  @@index([email])
+  @@index([invitedBy])
+  @@map("practice_cohort_invites")
+}
+
+model PracticeNotification {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  title     String    @db.VarChar(120)
+  message   String    @db.VarChar(400)
+  link      String    @db.VarChar(240)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  readAt    DateTime? @map("read_at") @db.Timestamptz(3)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt, id])
+  @@index([userId, readAt])
+  @@map("practice_notifications")
+}
+
+enum PracticeInstitutionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  REVOKED
+}
+
+model PracticeInstitutionApplication {
+  id             String                    @id @default(uuid()) @db.Uuid
+  applicantId    String?                   @map("applicant_id") @db.Uuid
+  submittedEmail String                    @map("submitted_email") @db.VarChar(254)
+  domain         String                    @db.VarChar(253)
+  name           String                    @db.VarChar(150)
+  evidence       String                    @db.VarChar(1000)
+  status         PracticeInstitutionStatus @default(PENDING)
+  universityId   String?                   @map("university_id") @db.Uuid
+  reason         String?                   @db.VarChar(1000)
+  submittedAt    DateTime                  @default(now()) @map("submitted_at") @db.Timestamptz(3)
+  reviewedAt     DateTime?                 @map("reviewed_at") @db.Timestamptz(3)
+  reviewedBy     String?                   @map("reviewed_by") @db.Uuid
+  version        Int                       @default(1)
+  applicant      User?                     @relation("PracticeInstitutionApplicant", fields: [applicantId], references: [id], onDelete: SetNull)
+  reviewer       User?                     @relation("PracticeInstitutionReviewer", fields: [reviewedBy], references: [id], onDelete: SetNull)
+  university     University?               @relation(fields: [universityId], references: [id], onDelete: Restrict)
+
+  @@index([applicantId, submittedAt], map: "practice_institution_applicant_history_idx")
+  @@index([domain, submittedAt], map: "practice_institution_domain_history_idx")
+  @@index([status, submittedAt, id], map: "practice_institution_review_queue_idx")
+  @@index([universityId], map: "practice_institution_university_idx")
+  @@index([reviewedBy], map: "practice_institution_reviewer_idx")
+  @@map("practice_institution_applications")
+}
+
+model PracticeOfficerApplication {
+  id             String               @id @default(uuid()) @db.Uuid
+  applicantId    String               @map("applicant_id") @db.Uuid
+  universityId   String               @map("university_id") @db.Uuid
+  submittedEmail String               @map("submitted_email") @db.VarChar(254)
+  status         PracticeReviewStatus @default(PENDING)
+  evidence       Json                 @default("[]")
+  version        Int                  @default(1)
+  submittedAt    DateTime             @default(now()) @map("submitted_at") @db.Timestamptz(3)
+  reviewedAt     DateTime?            @map("reviewed_at") @db.Timestamptz(3)
+  reviewedBy     String?              @map("reviewed_by") @db.Uuid
+  reason         String?              @db.VarChar(1000)
+  applicant      User                 @relation("PracticeOfficerApplicant", fields: [applicantId], references: [id], onDelete: Cascade)
+  reviewer       User?                @relation("PracticeOfficerReviewer", fields: [reviewedBy], references: [id], onDelete: SetNull)
+  university     University           @relation(fields: [universityId], references: [id], onDelete: Cascade)
+
+  @@index([applicantId, universityId, submittedAt], map: "practice_officer_applicant_history_idx")
+  @@index([status, submittedAt, id])
+  @@index([universityId])
+  @@index([reviewedBy])
+  @@map("practice_officer_applications")
+}
+
+model PracticePlacementMember {
+  userId       String     @id @map("user_id") @db.Uuid
+  universityId String     @map("university_id") @db.Uuid
+  isPrimary    Boolean    @default(false) @map("is_primary")
+  joinedAt     DateTime   @default(now()) @map("joined_at") @db.Timestamptz(3)
+  teacher      Teacher    @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+
+  @@index([universityId])
+  @@map("practice_placement_team")
+}
+
+model PracticeAssignment {
+  id          String   @id @default(uuid()) @db.Uuid
+  classId     String   @map("class_id") @db.Uuid
+  title       String   @db.VarChar(100)
+  problemIds  String[] @map("problem_ids") @db.Uuid
+  startsAt    DateTime @default(now()) @map("starts_at") @db.Timestamptz(3)
+  dueAt       DateTime @map("due_at") @db.Timestamptz(3)
+  archived    Boolean  @default(false)
+  autoRemindedAt DateTime? @map("auto_reminded_at") @db.Timestamptz(3)
+  archivedAt  DateTime? @map("archived_at") @db.Timestamptz(3)
+  classroom   Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@index([classId, dueAt])
+  @@map("practice_assignments")
+}
+
+enum PracticeReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model PracticeRecruiter {
+  userId  String @id @map("user_id") @db.Uuid
+  company String @db.VarChar(100)
+  workEmail String @map("work_email") @db.VarChar(254)
+  status   PracticeReviewStatus @default(PENDING)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  reviewedAt DateTime? @map("reviewed_at") @db.Timestamptz(3)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@map("practice_recruiters")
+}
+
+model PracticeRecruiterInterest {
+  id          String @id @default(uuid()) @db.Uuid
+  candidateHandle String? @map("candidate_handle") @db.VarChar(32)
+  recruiterId String @map("recruiter_id") @db.Uuid
+  candidateId String @map("candidate_id") @db.Uuid
+  message     String
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  recruiter   User @relation("PracticeInterestRecruiter", fields: [recruiterId], references: [id], onDelete: Cascade)
+  candidate   User @relation("PracticeInterestCandidate", fields: [candidateId], references: [id], onDelete: Cascade)
+
+  @@index([candidateId, createdAt(sort: Desc), id(sort: Desc)], map: "practice_interest_candidate_recent_idx")
+  @@index([recruiterId, createdAt(sort: Desc), id(sort: Desc)], map: "practice_interest_recruiter_recent_idx")
+  @@index([recruiterId, candidateId, createdAt(sort: Desc), id(sort: Desc)], map: "practice_interest_pair_recent_idx")
+  @@map("practice_recruiter_interests")
+}
+
+model PracticeAssessment {
+  id              String @id @default(uuid()) @db.Uuid
+  recruiterId     String @map("recruiter_id") @db.Uuid
+  candidateId     String @map("candidate_id") @db.Uuid
+  title           String @db.VarChar(100)
+  durationMinutes Int @map("duration_minutes")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  startedAt       DateTime? @map("started_at") @db.Timestamptz(3)
+  finishedAt      DateTime? @map("finished_at") @db.Timestamptz(3)
+  recruiter       User @relation("PracticeTestRecruiter", fields: [recruiterId], references: [id], onDelete: Cascade)
+  candidate       User @relation("PracticeTestCandidate", fields: [candidateId], references: [id], onDelete: Cascade)
+  problems        PracticeAssessmentProblem[]
+  solves          PracticeAssessmentSolve[]
+
+  @@index([recruiterId])
+  @@index([candidateId])
+  @@map("practice_assessments")
+}
+
+model PracticeAssessmentProblem {
+  assessmentId String @map("assessment_id") @db.Uuid
+  problemId    String @map("problem_id") @db.Uuid
+  position     Int
+  version      Int
+  assessment   PracticeAssessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  problem      Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@id([assessmentId, problemId])
+  @@unique([assessmentId, position])
+  @@index([problemId])
+  @@map("practice_assessment_problems")
+}
+
+model PracticeAssessmentSolve {
+  assessmentId String @map("assessment_id") @db.Uuid
+  problemId    String @map("problem_id") @db.Uuid
+  submissionId String @unique @map("submission_id") @db.Uuid
+  assessment   PracticeAssessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  submission   PracticeSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+
+  @@id([assessmentId, problemId])
+  @@map("practice_assessment_solves")
+}
+
+
+enum PracticePublicationKind {
+  REPORT
+  FEATURE
+  CONTRIBUTION
+  AMBASSADOR
+}
+
+enum PracticePublicationState {
+  PENDING
+  APPROVED
+  REJECTED
+  SHIPPED
+  WITHDRAWN
+}
+
+model PracticePublication {
+  payload Json?
+  reviewReason String? @map("review_reason") @db.VarChar(1000)
+  id         String  @id @default(uuid()) @db.Uuid
+  authorId   String  @map("author_id") @db.Uuid
+  kind       PracticePublicationKind
+  state      PracticePublicationState @default(PENDING)
+  title      String @db.VarChar(120)
+  body       String
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  reviewedAt DateTime? @map("reviewed_at") @db.Timestamptz(3)
+  author     User    @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  votes      PracticePublicationVote[]
+  ambassadorCollegeName String? @map("ambassador_college_name") @db.VarChar(200)
+  ambassadorCollegeDomain String? @map("ambassador_college_domain") @db.VarChar(253)
+  ambassadorRejectionReason String? @map("ambassador_rejection_reason") @db.VarChar(500)
+
+  @@index([kind, state, createdAt])
+  @@index([authorId])
+  @@map("practice_publications")
+}
+
+model PracticePublicationVote {
+  publicationId String @map("publication_id") @db.Uuid
+  userId        String @map("user_id") @db.Uuid
+  publication   PracticePublication @relation(fields: [publicationId], references: [id], onDelete: Cascade)
+  user          User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([publicationId, userId])
+  @@index([userId])
+  @@map("practice_publication_votes")
+}
+
+model PracticeOpportunity {
+  id        String   @id @default(uuid()) @db.Uuid
+  title     String   @db.VarChar(120)
+  company   String   @db.VarChar(100)
+  category  String   @db.VarChar(32)
+  remote    Boolean  @default(false)
+  summary   String
+  applyUrl  String   @map("apply_url")
+  closesAt  DateTime? @map("closes_at") @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  published Boolean @default(false)
+  clicks    Int     @default(0)
+
+  sourceUrl         String?   @map("source_url")
+  importFingerprint String?   @unique @map("import_fingerprint")
+  verifiedAt        DateTime? @map("verified_at") @db.Timestamptz(3)
+
+  @@index([published, closesAt])
+  @@map("practice_opportunities")
+}
+
+model PracticeReferral {
+  referredId  String @id @map("referred_id") @db.Uuid
+  referrerId  String @map("referrer_id") @db.Uuid
+  qualifiedAt DateTime? @map("qualified_at") @db.Timestamptz(3)
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  referred    User @relation("PracticeReferred", fields: [referredId], references: [id], onDelete: Cascade)
+  referrer    User @relation("PracticeReferrer", fields: [referrerId], references: [id], onDelete: Cascade)
+
+  @@index([referrerId])
+  @@map("practice_referrals")
+}
+
+model PracticeCredit {
+  id        String @id @default(uuid()) @db.Uuid
+  userId    String @map("user_id") @db.Uuid
+  eventKey  String @unique @map("event_key")
+  reason    String @db.VarChar(60)
+  amount    Int
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("practice_credits")
+}
+
+model PracticeReward {
+  id       String @id @default(uuid()) @db.Uuid
+  title    String @db.VarChar(120)
+  details  String
+  cost     Int
+  stock    Int
+  available Boolean @default(true)
+  redemptions PracticeRedemption[]
+
+  @@map("practice_rewards")
+}
+
+enum PracticeRedemptionState {
+  PENDING
+  FULFILLED
+  CANCELLED
+}
+
+model PracticeRedemption {
+  id        String @id @default(uuid()) @db.Uuid
+  userId    String @map("user_id") @db.Uuid
+  rewardId  String @map("reward_id") @db.Uuid
+  cost      Int
+  requestKey String @map("request_key") @db.Uuid
+  state     PracticeRedemptionState @default(PENDING)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reward    PracticeReward @relation(fields: [rewardId], references: [id])
+
+  @@unique([userId, requestKey])
+  @@index([userId, createdAt])
+  @@index([rewardId])
+  @@map("practice_redemptions")
+}
+
+
+model PracticeDailyQuiz {
+  day String @id @db.VarChar(10)
+  questionId String @map("question_id")
+  topic String
+  prompt String
+  choices Json
+  answer Int
+  explanation String
+  @@map("practice_daily_quizzes")
+}
+
+model PracticeOperationalSettings {
+  id String @id @default("global")
+  version Int @default(1)
+  maintenance Boolean @default(false)
+  recruiterRegistration Boolean @default(true) @map("recruiter_registration")
+  officerRegistration Boolean @default(true) @map("officer_registration")
+  announcement String @default("") @db.VarChar(1000)
+  @@map("practice_operational_settings")
+}
+
+model PracticeProgressReset {
+  epochs PracticeProgressEpoch[]
+  id String @id @db.Uuid
+  userId String @map("user_id") @db.Uuid
+  actorId String @map("actor_id") @db.Uuid
+  resetAt DateTime @default(now()) @map("reset_at") @db.Timestamptz(3)
+  snapshot Json
+  @@index([userId, resetAt])
+  @@map("practice_progress_resets")
+}
+
+model PracticeEditionMission {
+  id String @id @db.VarChar(60)
+  problemId String @map("problem_id") @db.Uuid
+  problem Problem @relation(fields: [problemId], references: [id], onDelete: Restrict)
+  @@map("practice_edition_missions")
+}
+
+model PracticeProgressEpoch {
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  reset PracticeProgressReset @relation(fields: [resetId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  userId String @id @map("user_id") @db.Uuid
+  resetId String @map("reset_id") @db.Uuid
+  resetAt DateTime @map("reset_at") @db.Timestamptz(3)
+  @@map("practice_progress_epochs")
+}

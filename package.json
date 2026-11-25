@@ -1,0 +1,30 @@
+{
+  "name": "dsa-practice-platform",
+  "version": "0.2.0-rc.1",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "shared",
+    "backend"
+  ],
+  "engines": {
+    "node": "^22.12.0 || ^24.0.0 || ^26.0.0"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @codeclub/frontend",
+    "dev:api": "npm run dev -w @codeclub/backend",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test -w @codeclub/backend",
+    "db:generate": "npm run db:generate -w @codeclub/backend",
+    "db:migrate": "npm run db:migrate -w @codeclub/backend",
+    "db:seed": "npm run db:seed -w @codeclub/backend",
+    "catalogue:import": "npm run catalogue:import -w @codeclub/backend --",
+    "contracts:sync": "node scripts/sync-contracts.mjs",
+    "contracts:check": "node scripts/sync-contracts.mjs --check",
+    "release:candidate": "node scripts/release-candidate.mjs"
+  },
+  "overrides": {
+    "dompurify": "3.4.18",
+    "effect": "3.22.5"
+  }
+}

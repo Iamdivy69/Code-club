@@ -1,0 +1,26 @@
+{
+  "frontend/package.json": [
+    [
+      "\n    \"qrcode\": \"^1.5.4\",",
+      "\n    \"pdf-lib\": \"1.17.1\",\n    \"qrcode\": \"^1.5.4\","
+    ]
+  ],
+  "package-lock.json": [
+    [
+      "\n        \"qrcode\": \"^1.5.4\",",
+      "\n        \"pdf-lib\": \"1.17.1\",\n        \"qrcode\": \"^1.5.4\","
+    ],
+    [
+      "    \"node_modules/@protobufjs/aspromise\": {",
+      "    \"node_modules/@pdf-lib/standard-fonts\": {\n      \"version\": \"1.0.0\",\n      \"resolved\": \"https://registry.npmjs.org/@pdf-lib/standard-fonts/-/standard-fonts-1.0.0.tgz\",\n      \"integrity\": \"sha512-hU30BK9IUN/su0Mn9VdlVKsWBS6GyhVfqjwl1FjZN4TxP6cCw0jP2w7V3Hf5uX7M0AZJ16vey9yE0ny7Sa59ZA==\",\n      \"license\": \"MIT\",\n      \"dependencies\": {\n        \"pako\": \"^1.0.6\"\n      }\n    },\n    \"node_modules/@pdf-lib/upng\": {\n      \"version\": \"1.0.1\",\n      \"resolved\": \"https://registry.npmjs.org/@pdf-lib/upng/-/upng-1.0.1.tgz\",\n      \"integrity\": \"sha512-dQK2FUMQtowVP00mtIksrlZhdFXQZPC+taih1q4CvPZ5vqdxR/LKBaFg0oAfzd1GlHZXXSPdQfzQnt+ViGvEIQ==\",\n      \"license\": \"MIT\",\n      \"dependencies\": {\n        \"pako\": \"^1.0.10\"\n      }\n    },\n    \"node_modules/@protobufjs/aspromise\": {"
+    ],
+    [
+      "    \"node_modules/parent-module\": {",
+      "    \"node_modules/pako\": {\n      \"version\": \"1.0.11\",\n      \"resolved\": \"https://registry.npmjs.org/pako/-/pako-1.0.11.tgz\",\n      \"integrity\": \"sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==\",\n      \"license\": \"(MIT AND Zlib)\"\n    },\n    \"node_modules/parent-module\": {"
+    ],
+    [
+      "    \"node_modules/picocolors\": {",
+      "    \"node_modules/pdf-lib\": {\n      \"version\": \"1.17.1\",\n      \"resolved\": \"https://registry.npmjs.org/pdf-lib/-/pdf-lib-1.17.1.tgz\",\n      \"integrity\": \"sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==\",\n      \"license\": \"MIT\",\n      \"dependencies\": {\n        \"@pdf-lib/standard-fonts\": \"^1.0.0\",\n        \"@pdf-lib/upng\": \"^1.0.1\",\n        \"pako\": \"^1.0.11\",\n        \"tslib\": \"^1.11.1\"\n      }\n    },\n    \"node_modules/pdf-lib/node_modules/tslib\": {\n      \"version\": \"1.14.1\",\n      \"resolved\": \"https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz\",\n      \"integrity\": \"sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==\",\n      \"license\": \"0BSD\"\n    },\n    \"node_modules/picocolors\": {"
+    ]
+  ]
+}
